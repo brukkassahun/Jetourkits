@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Midnight Transformation Lab — dark base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-void text-foreground font-sans antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  @apply bg-accent text-white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-void;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-line rounded-none;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-faint;
+}
+
+/* Typography + UI primitives */
+@layer components {
+  .eyebrow {
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.34em] text-accent;
+  }
+  .display-xl {
+    @apply font-display font-extrabold uppercase leading-[0.92] tracking-[-0.01em];
+  }
+  .display-lg {
+    @apply font-display font-bold leading-[1.04] tracking-[-0.005em];
+  }
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden bg-accent px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-accent-strong hover:shadow-[0_12px_32px_-8px_rgba(14,122,61,0.5)];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-ink/25 px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:border-accent hover:text-accent;
+  }
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 border border-white/40 px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-void;
+  }
+  .hairline-t {
+    @apply border-t border-line;
+  }
+  .input-lux {
+    @apply w-full appearance-none border border-line bg-elevated px-4 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.14em] text-foreground outline-none transition-colors focus:border-accent [&>option]:bg-panel;
+  }
+}
+
+/* Shine sweep on hover (buttons, cards) */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, 0.14) 50%, transparent 58%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* Marquee ticker */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.marquee-rev {
+  animation-direction: reverse;
+}
+.marquee-hover:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Ken Burns drift for hero imagery */
+@keyframes kenburns {
+  from { transform: scale(1.12) translateX(1.5%); }
+  to { transform: scale(1) translateX(0); }
+}
+.kenburns {
+  animation: kenburns 9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Word-by-word hero headline reveal */
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(110%) rotate(4deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+.word-in {
+  display: inline-block;
+  animation: word-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Floating glow orbs */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.animate-float {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+/* Volt glow pulse for the primary CTA */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 8px 28px -6px rgba(14, 122, 61, 0.4); }
+  50% { box-shadow: 0 12px 44px -6px rgba(14, 122, 61, 0.6); }
+}
+.animate-glow {
+  animation: glow-pulse 2.8s ease-in-out infinite;
+}
+
+/* Scroll reveal — hidden only with JS active */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.985);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* 3D tilt card (driven by pointer JS) */
+.tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, box-shadow 0.45s;
+}
+.tilt.is-tilting {
+  transition: transform 0.08s linear, border-color 0.3s, box-shadow 0.45s;
+}
+
+/* Outlined ghost word */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(14, 122, 61, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .kenburns,
+  .word-in,
+  .animate-float,
+  .animate-glow {
+    animation: none !important;
+  }
+  /* Anime/letter hero — show immediately, no motion */
+  .hero-letter {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .hero-underline {
+    transform: scaleX(1) !important;
+  }
+  .hero-fade {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html.js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
