@@ -151,8 +151,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-display font-bold text-ink mt-8 mb-4">Intellectual Property</h2>
               <p className="text-muted-foreground leading-relaxed">
-                All content on this website, including text, graphics, logos, images, and software, is the property of
-                {site.name} and protected by copyright and trademark laws. Unauthorized use of any content is strictly prohibited.
+                All content on this website, including text, graphics, logos, images, and software, is the property of {site.name} and protected by copyright and trademark laws. Unauthorized use of any content is strictly prohibited.
               </p>
             </div>
 
