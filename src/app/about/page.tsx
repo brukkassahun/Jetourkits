@@ -1,226 +1,281 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Globe, Shield, Factory, Microscope, Package, Award, Cpu } from "lucide-react";
-import { site } from "@/lib/site";
+import { ArrowRight, Shield, Factory, Microscope, Package, Star } from "lucide-react";
+import { site, whatsappLink } from "@/lib/site";
 
 export const metadata = {
   title: "About Us",
-  description: `About ${site.name} — Premium wholesale aftermarket parts for the Jetour T2`,
+  description: `About ${site.name} — Premium wholesale aftermarket parts for the Jetour T2, T1 and G700`,
 };
 
+const stats = [
+  { value: "10+", label: "Years Experience" },
+  { value: "50+", label: "Product Lines" },
+  { value: "30+", label: "Countries Served" },
+  { value: "100%", label: "QC Verified" },
+];
+
+const collage = [
+  {
+    title: "The Network",
+    desc: "ISO 9001 & IATF 16949 certified partners across Guangzhou.",
+    image: "/images/oem-fit.webp",
+  },
+  {
+    title: "The Lab",
+    desc: "Salt spray, hardness, flame and fitment validation on every batch.",
+    image: "/images/about-lab.webp",
+  },
+  {
+    title: "The Road",
+    desc: "Real-world testing from desert dunes to city streets.",
+    image: "/images/about-road.webp",
+  },
+  {
+    title: "The Lifestyle",
+    desc: "Built for owners who turn every drive into an adventure.",
+    image: "/images/about-hero.webp",
+  },
+];
+
+const highlights = [
+  {
+    title: "Built in the open.",
+    body: "Every kit starts with a factory visit. We share material specs, test reports and mounting templates before you order.",
+    icon: Factory,
+  },
+  {
+    title: "Quality first.",
+    body: "Independent third-party verification for salt spray, hardness, flame retardancy and odor. If it doesn't pass, it doesn't ship.",
+    icon: Microscope,
+  },
+  {
+    title: "Always shipping.",
+    body: "98% on-time delivery rate to 30+ countries. DHL express or consolidated sea freight — you choose the speed and cost.",
+    icon: Package,
+  },
+];
+
+const testimonials = [
+  {
+    quote: "The T2 Mars Explorer kit arrived perfectly crated. Fitment was bolt-on and our Ghana customers love the look.",
+    name: "Ellis Danso",
+    role: "CEO, KEYTOUR AUTO",
+    rating: 5,
+  },
+  {
+    quote: "Finally a supplier that understands the Traveller platform. CAD-matched brackets saved us weeks of rework.",
+    name: "Wholesale Buyer",
+    role: "Nigeria",
+    rating: 5,
+  },
+  {
+    quote: "We order full containers monthly. The QC reports and batch traceability make customs clearance much easier.",
+    name: "Fleet Operator",
+    role: "UAE",
+    rating: 5,
+  },
+];
+
 export default function AboutPage() {
-  const stats = [
-    { value: "10+", label: "Years Experience" },
-    { value: "50+", label: "Product Lines" },
-    { value: "30+", label: "Countries Served" },
-    { value: "100%", label: "QC Verified" },
-  ];
-
-  const certifications = [
-    { name: "ISO 9001:2015", desc: "Quality Management System", icon: Shield },
-    { name: "IATF 16949", desc: "Automotive Quality System", icon: Cpu },
-    { name: "OEM Certified", desc: "Verified Supplier Network", icon: Award },
-  ];
-
-  const capabilities = [
-    { title: "Precision Engineering", desc: "CAD/CAM design, 3D scanning, and reverse engineering for perfect fitment", icon: Cpu },
-    { title: "Quality Control", desc: "Salt spray, hardness, flame retardant, and odor testing on every batch", icon: Microscope },
-    { title: "Full-Service Sourcing", desc: "End-to-end procurement from design validation to global logistics", icon: Package },
-    { title: "Fitment Guarantee", desc: "Full vehicle 3D scanning ensures every part fits the Jetour T2 perfectly", icon: Shield },
-    { title: "Lab Testing", desc: "Independent third-party verification for all products before export", icon: Microscope },
-    { title: "Global Export", desc: "Experienced international logistics to 30+ countries worldwide", icon: Globe },
-  ];
-
-  const designEngineering = [
-    "CATIA, SolidWorks, UG design validation",
-    "Full vehicle 3D scanning & reverse engineering",
-    "CAE force simulation & stress analysis",
-    "Prototype validation before mass production",
-    "APQP 5-phase project management",
-  ];
-
-  const qualityManagement = [
-    "PFMEA & DFMEA risk analysis",
-    "Independent salt spray, hardness, flame testing",
-    "100% supplier issue closure rate",
-    "98% on-time delivery rate",
-    "Full batch traceability & documentation",
-  ];
-
   return (
-    <main className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to home
-        </Link>
-
-        <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-display font-bold text-ink mb-4">About Us</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We are a specialized sourcing company dedicated exclusively to the Jetour T2 aftermarket.
-            Through our network of select, certified manufacturing partners, we deliver premium body kits,
-            rims, and tires to wholesale buyers worldwide.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 mb-16 items-center">
-          <div>
-            <h2 className="text-2xl font-display font-bold text-ink mb-4">Our Network</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                We work exclusively with a <strong className="text-ink">select network of certified manufacturing partners</strong>{" "}
-                who hold the highest automotive quality standards. Every partner in our network is{" "}
-                <strong className="text-ink">ISO 9001:2015</strong> and{" "}
-                <strong className="text-ink">IATF 16949</strong> certified — the same standards required by major global automakers.
+    <main className="min-h-screen bg-void">
+      {/* Hero */}
+      <section className="overflow-hidden border-b border-line bg-panel">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="order-2 lg:order-1">
+              <p className="eyebrow text-accent">About Us</p>
+              <h1 className="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+                Built for the <span className="italic">Jetour</span> generation.
+              </h1>
+              <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
+                We source OEM-fit aftermarket parts directly from certified manufacturing partners
+                in China — engineered for the T2, T1 and G700, and shipped to wholesale buyers worldwide.
               </p>
-              <p>
-                Our partners supply OEM-grade components to some of China&apos;s largest automotive brands. Through our exclusive
-                sourcing relationships, we bring those same quality parts to the aftermarket — directly to you, with no intermediaries.
-              </p>
-              <p>
-                Every product in our catalog undergoes rigorous independent quality verification before export, including salt spray
-                testing, hardness analysis, flame retardant testing, and odor assessment. We don&apos;t just source parts — we validate them.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-6 mt-8">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-3xl font-bold text-accent">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl overflow-hidden aspect-square bg-muted">
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                <Factory className="w-16 h-16" />
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/products"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-accent-strong"
+                >
+                  Shop Kits
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href={whatsappLink("Hi Jetour Kits, I'd like to discuss a wholesale order: ")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-void px-6 py-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-ink transition-colors hover:border-accent hover:text-accent"
+                >
+                  Contact Sales
+                </a>
               </div>
             </div>
-            <div className="rounded-xl overflow-hidden aspect-square bg-muted">
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                <Shield className="w-16 h-16" />
-              </div>
-            </div>
-            <div className="rounded-xl overflow-hidden aspect-square bg-muted">
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                <Microscope className="w-16 h-16" />
-              </div>
-            </div>
-            <div className="rounded-xl overflow-hidden aspect-square bg-muted">
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                <Globe className="w-16 h-16" />
+            <div className="order-1 lg:order-2">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-square">
+                <Image
+                  src="/images/about-hero.webp"
+                  alt="Jetour T2 in desert dunes"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-          {certifications.map((cert) => (
-            <div key={cert.name} className="bg-card rounded-xl border border-border p-5">
-              <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-3">
-                <cert.icon className="w-5 h-5 text-accent" />
-              </div>
-              <p className="font-semibold text-ink">{cert.name}</p>
-              <p className="text-xs text-muted-foreground">{cert.desc}</p>
-            </div>
-          ))}
-        </div>
+      {/* Who we are collage */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <p className="eyebrow text-accent">Who We Are</p>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
+              Built by people obsessed with upgrade culture.
+            </h2>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-muted sm:text-lg">
+              We are not a generic parts trader. We live the platform, visit the factories, and validate every bracket before it reaches your warehouse.
+            </p>
+          </div>
 
-        <div className="mb-16">
-          <h2 className="text-2xl font-display font-bold text-ink text-center mb-2">Our Capabilities</h2>
-          <p className="text-muted-foreground text-center mb-8 max-w-xl mx-auto">
-            Full-service sourcing from design validation to your doorstep.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {capabilities.map((cap) => (
+          <div className="grid grid-cols-2 gap-4 sm:gap-5">
+            {collage.map((item, i) => (
               <div
-                key={cap.title}
-                className="bg-card rounded-xl border border-border p-5 hover:border-accent/30 transition-all"
+                key={item.title}
+                className={`group relative overflow-hidden rounded-2xl ${i % 3 === 0 ? "aspect-[4/5]" : "aspect-square"}`}
               >
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-3">
-                  <cap.icon className="w-5 h-5 text-accent" />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-4 sm:p-5">
+                  <p className="font-display text-lg italic text-white sm:text-xl">{item.title}</p>
+                  <p className="mt-1 max-w-[14rem] text-xs leading-relaxed text-white/80 sm:text-sm">{item.desc}</p>
                 </div>
-                <h3 className="font-semibold text-ink mb-1">{cap.title}</h3>
-                <p className="text-muted-foreground text-sm">{cap.desc}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-card rounded-xl border border-border p-6">
-            <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-accent" />
-              Design & Engineering
-            </h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {designEngineering.map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-accent mt-1">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-card rounded-xl border border-border p-6">
-            <h3 className="font-bold text-ink mb-4 flex items-center gap-2">
-              <Microscope className="w-5 h-5 text-accent" />
-              Quality Management
-            </h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {qualityManagement.map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-accent mt-1">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+      {/* Highlights */}
+      <section className="border-y border-line bg-panel">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+          <p className="eyebrow text-accent">The Highlights</p>
+          <h2 className="mt-4 max-w-2xl font-display text-3xl font-bold leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
+            The future of Jetour upgrades needs builders.
+          </h2>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {highlights.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-line bg-void p-6 transition-shadow hover:shadow-sm"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10">
+                  <item.icon className="h-5 w-5 text-accent" />
+                </div>
+                <h3 className="mt-5 font-display text-xl font-bold text-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/20 rounded-2xl p-8 mb-16">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center shrink-0">
-              <Award className="w-8 h-8 text-accent" />
+      {/* Stats */}
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-2 gap-6 rounded-2xl border border-line bg-panel p-6 sm:grid-cols-4 sm:p-10">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="font-display text-3xl font-bold text-accent sm:text-4xl">{stat.value}</p>
+              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-muted">{stat.label}</p>
             </div>
-            <div>
-              <h3 className="text-xl font-bold text-ink mb-1">Award-Winning Network</h3>
-              <p className="text-muted-foreground">
-                Our manufacturing partners have earned industry recognition including the{" "}
-                <strong className="text-accent">6-Star Gold Award</strong> at the 2025 RA Auto Customization Competition and{" "}
-                <strong className="text-accent">Best New Product Award</strong> at the 2025 Shanghai Auto Customization Expo.
-              </p>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-panel">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+          <p className="eyebrow text-accent">Backed by Buyers</p>
+          <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
+            Trusted by wholesale buyers worldwide.
+          </h2>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t) => (
+              <div
+                key={t.name + t.role}
+                className="flex flex-col rounded-2xl border border-line bg-void p-6"
+              >
+                <div className="flex gap-0.5">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="mt-4 flex-1 text-base leading-relaxed text-ink">&ldquo;{t.quote}&rdquo;</p>
+                <div className="mt-6 border-t border-line pt-4">
+                  <p className="font-semibold text-ink">{t.name}</p>
+                  <p className="text-xs text-muted">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+        <div className="relative overflow-hidden rounded-3xl bg-accent px-6 py-14 sm:px-12 sm:py-20 lg:px-16 lg:py-24">
+          <div className="relative z-10 max-w-2xl">
+            <p className="font-sans text-xs font-bold uppercase tracking-[0.14em] text-white/80">Join the Team</p>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] text-white sm:text-4xl lg:text-5xl">
+              Ready to upgrade your Jetour?
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-white/90 sm:text-lg">
+              Browse the catalog, request a quote, or talk to sales about wholesale pricing and container orders.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-accent transition-colors hover:bg-white/90"
+              >
+                Browse Catalog
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-white/10"
+              >
+                Contact Sales
+              </Link>
             </div>
           </div>
+          <div className="pointer-events-none absolute -right-12 -top-12 h-64 w-64 rounded-full bg-white/10 blur-3xl sm:h-80 sm:w-80 lg:h-96 lg:w-96" />
+          <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-white/10 blur-3xl sm:h-80 sm:w-80" />
         </div>
+      </section>
 
-        <div className="text-center">
-          <h2 className="text-2xl font-display font-bold text-ink mb-4">Ready to Source?</h2>
-          <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-            Partner with a team that knows the Jetour T2 inside and out. Premium parts, competitive pricing, reliable delivery.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent/90 text-white font-semibold text-sm rounded-full transition-colors"
-            >
-              Contact Sales
-            </Link>
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-card hover:bg-muted border border-border text-ink font-medium text-sm rounded-full transition-colors"
-            >
-              Browse Catalog
-            </Link>
+      {/* Certifications strip */}
+      <section className="border-t border-line bg-void">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+            {["ISO 9001:2015", "IATF 16949", "OEM Certified", "100% QC Verified"].map((cert) => (
+              <div key={cert} className="flex items-center gap-2 text-muted">
+                <Shield className="h-4 w-4 text-accent" />
+                <span className="text-xs font-bold uppercase tracking-wider">{cert}</span>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
