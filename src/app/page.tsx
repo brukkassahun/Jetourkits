@@ -171,7 +171,7 @@ export default async function HomePage() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {models.map((m, i) => (
             <Reveal key={m.id} delay={i * 100} className="h-full">
-              <Link href={m.href} className="group shine flex h-full flex-col overflow-hidden border border-line bg-panel">
+              <Link href={m.href} className="group shine flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(14,122,61,0.18)]">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={m.image}
@@ -285,7 +285,7 @@ export default async function HomePage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {advantages.map((f, i) => (
             <Reveal key={f.title} delay={i * 90} className="h-full">
-              <div className="h-full border border-line bg-panel p-7 transition-colors hover:bg-elevated">
+              <div className="h-full rounded-2xl border border-line bg-panel p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-elevated hover:shadow-[0_16px_40px_-16px_rgba(14,122,61,0.14)]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
                   <f.icon className="h-6 w-6" strokeWidth={1.5} />
                 </div>
@@ -383,7 +383,7 @@ export default async function HomePage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {testimonials.map((t, i) => (
               <Reveal key={t.author} delay={i * 100} className="h-full">
-                <div className="relative h-full border border-line bg-card p-7 sm:p-8">
+                <div className="relative h-full rounded-2xl border border-line bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_-16px_rgba(14,122,61,0.12)] sm:p-8">
                   <Quote className="h-10 w-10 text-accent/20" strokeWidth={1.5} />
                   <p className="mt-4 text-sm leading-relaxed text-ink/80">&ldquo;{t.quote}&rdquo;</p>
                   <div className="mt-6 flex items-center justify-between">

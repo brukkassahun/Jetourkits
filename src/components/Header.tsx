@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingCart } from "lucide-react";
-import { navLinks, site } from "@/lib/site";
+import { navLinks } from "@/lib/site";
 import { useCart } from "./CartProvider";
 import CurrencySelector from "./CurrencySelector";
+import Logo from "./Logo";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -44,13 +45,7 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
-          <Link
-            href="/"
-            className="font-display text-lg font-medium uppercase tracking-[0.28em] text-ink transition-colors"
-            aria-label={site.name}
-          >
-            {site.name}
-          </Link>
+          <Logo variant="dark" />
 
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((l) => (

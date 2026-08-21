@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { navLinks, site, whatsappLink, brandLines } from "@/lib/site";
 import NewsletterForm from "./NewsletterForm";
+import Logo from "./Logo";
 
 const companyLinks = [
   { href: "/about", label: "About Us" },
@@ -24,9 +25,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand + newsletter */}
           <div className="lg:col-span-1">
-            <Link href="/" className="font-display text-lg font-medium uppercase tracking-[0.28em] text-ink">
-              {site.name}
-            </Link>
+            <Logo variant="dark" />
             <p className="mt-5 text-sm leading-[1.8] text-muted">{site.description}</p>
             <div className="mt-7">
               <p className="eyebrow mb-3">New kit release alerts</p>

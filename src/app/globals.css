@@ -131,7 +131,7 @@ body {
 /* Scroll reveal — hidden only with JS active */
 html.js .reveal {
   opacity: 0;
-  transform: translateY(30px) scale(0.985);
+  transform: translateY(var(--reveal-y, 30px)) scale(0.985);
   transition:
     opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);

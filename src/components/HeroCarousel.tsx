@@ -89,9 +89,9 @@ export default function HeroCarousel() {
               {slide.tagline}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link href={slide.href} className="btn-primary">
+              <Link href={slide.href} className="btn-primary group">
                 {slide.cta.primary}
-                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
               </Link>
               <Link href={slide.href} className="btn-ghost-light">
                 {slide.cta.secondary}
