@@ -10,11 +10,18 @@ interface RevealProps {
   once?: boolean;
 }
 
+function isInViewport(el: HTMLElement) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom > 0
+  );
+}
+
 export default function Reveal({
   children,
   className = "",
   delay = 0,
-  y = 28,
   once = true,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -24,11 +31,16 @@ export default function Reveal({
     const node = ref.current;
     if (!node) return;
 
-    // Respect reduced motion
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
       setVisible(true);
       return;
+    }
+
+    // If already in viewport, reveal immediately (avoids SSR/initial-render blank spots)
+    if (isInViewport(node)) {
+      setVisible(true);
+      if (once) return;
     }
 
     const observer = new IntersectionObserver(
@@ -40,7 +52,7 @@ export default function Reveal({
           setVisible(false);
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
     );
 
     observer.observe(node);
@@ -51,11 +63,7 @@ export default function Reveal({
     <div
       ref={ref}
       className={`reveal ${visible ? "is-visible" : ""} ${className}`}
-      style={{
-        transitionDelay: visible ? `${delay}ms` : "0ms",
-        // custom starting offset is handled by CSS, but we allow override
-        ["--reveal-y" as string]: `${y}px`,
-      }}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
