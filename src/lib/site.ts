@@ -7,7 +7,7 @@ export const site = {
   whatsapp: "8613800000000",
   wechat: "JETOURKITS",
   email: "contact@jetourt2parts.com",
-  address: "Guangzhou Auto Parts District, China",
+  address: "China,Guangzhou",
 };
 
 export const navLinks = [

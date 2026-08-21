@@ -133,7 +133,7 @@ export default function WholesalePage() {
         </p>
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href={whatsappLink("Hello MECHAKIT! Wholesale inquiry:%0A- Models/kit types:%0A- Quantities:%0A- Destination port:")}
+            href={whatsappLink(`Hello ${site.name}! Wholesale inquiry:%0A- Models/kit types:%0A- Quantities:%0A- Destination port:`)}
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center justify-center gap-2 bg-success px-7 py-3.5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-white transition-transform hover:scale-[1.03] sm:w-auto"
