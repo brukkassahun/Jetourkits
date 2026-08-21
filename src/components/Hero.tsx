@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { animate, stagger } from "animejs";
 import { ArrowRight, Globe, ShieldCheck, Factory } from "lucide-react";
 import { trustBadges } from "@/lib/site";
-import ModelFinder from "./ModelFinder";
 
 const badgeIcons = { globe: Globe, shield: ShieldCheck, factory: Factory } as const;
 
@@ -152,11 +151,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Model finder — floating panel overlapping the hero seam */}
-      <div className="relative mx-auto -mt-6 max-w-6xl px-4 sm:px-6">
-        <ModelFinder />
       </div>
 
       {/* Trust row — hairline separated, editorial */}

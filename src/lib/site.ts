@@ -11,11 +11,12 @@ export const site = {
 };
 
 export const navLinks = [
-  { href: "/products", label: "All Kits" },
-  { href: "/products?style=Off-Road", label: "Off-Road" },
-  { href: "/products?style=Mecha", label: "Mecha" },
-  { href: "/products?style=Urban%20Aero", label: "Urban Aero" },
+  { href: "/products?model=T2", label: "T2" },
+  { href: "/products?model=T1%20%2F%20Traveller", label: "T1" },
+  { href: "/products?model=G700", label: "G700" },
   { href: "/wholesale", label: "Wholesale" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/about", label: "About Us" },
 ];
 
 export function whatsappLink(message: string) {

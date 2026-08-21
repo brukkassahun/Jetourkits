@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award, FlaskConical, Boxes, Truck, Building2, Quote, Star } from "lucide-react";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import BeforeAfter from "@/components/BeforeAfter";
@@ -78,6 +78,25 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+
+      {/* Stats strip */}
+      <section className="border-y border-line bg-panel">
+        <div className="mx-auto grid max-w-7xl divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+          {[
+            { value: "50+", label: "Product Lines" },
+            { value: "30+", label: "Countries Served" },
+            { value: "ISO 9001", label: "& IATF 16949" },
+            { value: "OEM", label: "Certified Partners" },
+          ].map((stat, i) => (
+            <Reveal key={stat.label} delay={i * 80} className="px-6 py-8 text-center sm:px-8">
+              <p className="font-display text-4xl font-bold text-accent sm:text-5xl">{stat.value}</p>
+              <p className="mt-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-muted">
+                {stat.label}
+              </p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
       {/* 01 — Shop by model */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
@@ -168,6 +187,134 @@ export default async function HomePage() {
               <ProductCard product={p} />
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* 03.5 — Our advantage */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow inline-flex items-center gap-3">
+              <span className="inline-block h-[1px] w-10 bg-accent" />
+              Our Advantage
+            </p>
+            <h2 className="display-lg mt-5 text-4xl text-ink sm:text-6xl">
+              Why Buy Wholesale From Us
+            </h2>
+            <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base">
+              We are the manufacturer — not a middleman. ISO 9001 & IATF 16949 certified, supplying
+              OEM-grade parts to Chery, Geely, Hongqi, and Great Wall.
+            </p>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: Award,
+              title: "Certified Manufacturer",
+              desc: "ISO 9001 & IATF 16949 certified. Same standards as OEM suppliers to major Chinese automakers.",
+            },
+            {
+              icon: FlaskConical,
+              title: "In-House Testing",
+              desc: "Salt spray, hardness, flame retardant, and odor testing. Full APQP quality management.",
+            },
+            {
+              icon: Boxes,
+              title: "Full Capabilities",
+              desc: "Laser cutting, CNC bending, robotic welding, and injection molding under one roof.",
+            },
+            {
+              icon: Truck,
+              title: "Global Shipping",
+              desc: "Experienced international logistics to 30+ countries. Air and sea freight options.",
+            },
+          ].map((f, i) => (
+            <Reveal key={f.title} delay={i * 90} className="h-full">
+              <div className="h-full border border-line bg-panel p-7 transition-colors hover:bg-elevated">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <f.icon className="h-6 w-6" strokeWidth={1.5} />
+                </div>
+                <h3 className="mt-5 font-display text-xl font-bold text-ink">{f.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{f.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* 03.6 — Testimonials */}
+      <section className="border-y border-line bg-panel">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="eyebrow inline-flex items-center gap-3">
+                <Building2 className="h-4 w-4" />
+                Trusted by Wholesale Buyers Worldwide
+              </p>
+              <h2 className="display-lg mt-5 text-4xl text-ink sm:text-6xl">
+                What Our Partners Say
+              </h2>
+              <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base">
+                Verified wholesale buyers who have worked with us long-term.
+              </p>
+            </div>
+          </Reveal>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {[
+              {
+                quote:
+                  "We source all our Jetour T2 body kits through these guys. The IATF 16949 certification their partners hold gives us confidence in the quality. Their side steps and roof racks are bestsellers in our market. Shipping is always reliable.",
+                author: "Ahmed Al-Rashid",
+                company: "Desert Off-Road Garage - Riyadh, Saudi Arabia",
+                stars: 4,
+              },
+              {
+                quote:
+                  "Working with a team that has direct access to OEM-certified manufacturers makes all the difference. We have visited their partner facilities — the laser cutting, CNC bending, and welding operations are world-class. Quality is consistently top-tier.",
+                author: "Mohammed Al-Farsi",
+                company: "Gulf Auto Trading LLC - Dubai, UAE",
+                stars: 5,
+              },
+              {
+                quote:
+                  "We have been importing Tank 300 and Jetour T2 accessories through them for over a year. The quality consistency is remarkable thanks to their rigorous APQP process management. Testing reports come with every batch.",
+                author: "Karim Benali",
+                company: "Maghreb Parts Import - Casablanca, Morocco",
+                stars: 4,
+              },
+              {
+                quote:
+                  "The fact that their partners supply to major OEMs tells you everything about the quality. We order container loads quarterly. The fitment precision is perfect every time — their 3D scanning validation process really shows.",
+                author: "James Chen",
+                company: "Pacific Auto Distributors - Manila, Philippines",
+                stars: 5,
+              },
+            ].map((t, i) => (
+              <Reveal key={t.author} delay={i * 100} className="h-full">
+                <div className="relative h-full border border-line bg-card p-7 sm:p-8">
+                  <Quote className="h-10 w-10 text-accent/20" strokeWidth={1.5} />
+                  <p className="mt-4 text-sm leading-relaxed text-ink/80">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="mt-6 flex items-center justify-between">
+                    <div>
+                      <p className="font-display text-sm font-bold text-ink">{t.author}</p>
+                      <p className="mt-0.5 text-xs text-muted">{t.company}</p>
+                    </div>
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: 5 }).map((_, si) => (
+                        <Star
+                          key={si}
+                          className={`h-4 w-4 ${
+                            si < t.stars ? "fill-accent text-accent" : "text-line"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

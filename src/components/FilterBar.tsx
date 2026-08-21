@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState, useTransition } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, SlidersHorizontal, ChevronDown } from "lucide-react";
-import { brandLines, kitStyles } from "@/lib/site";
+import { brandLines } from "@/lib/site";
 import { kitTypes } from "@/lib/products";
 
 const selectCls =
@@ -17,13 +17,11 @@ export default function FilterBar({ resultCount }: { resultCount: number }) {
   const [moreOpen, setMoreOpen] = useState(false);
   const [q, setQ] = useState(searchParams.get("q") ?? "");
 
-  const brand = searchParams.get("brand") ?? "";
   const model = searchParams.get("model") ?? "";
-  const style = searchParams.get("style") ?? "";
   const kitType = searchParams.get("kitType") ?? "";
   const sort = searchParams.get("sort") ?? "featured";
 
-  const models = brandLines.find((b) => b.id === brand)?.models ?? [];
+  const models = brandLines.flatMap((b) => b.models);
 
   useEffect(() => setQ(searchParams.get("q") ?? ""), [searchParams]);
 
@@ -34,8 +32,6 @@ export default function FilterBar({ resultCount }: { resultCount: number }) {
       );
       if (value) params.set(key, value);
       else params.delete(key);
-      // Reset model when brand changes
-      if (key === "brand") params.delete("model");
       startTransition(() => router.replace(`${pathname}?${params.toString()}`, { scroll: false }));
     },
     [router, pathname, searchParams],
@@ -50,7 +46,7 @@ export default function FilterBar({ resultCount }: { resultCount: number }) {
   }, [q, searchParams, update]);
 
   const advancedCount = [kitType].filter(Boolean).length;
-  const hasAny = brand || model || style || kitType || q;
+  const hasAny = model || kitType || q;
 
   return (
     <div className="border border-line bg-panel p-5">
@@ -65,34 +61,17 @@ export default function FilterBar({ resultCount }: { resultCount: number }) {
         />
       </div>
 
-      <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
-        <select value={brand} onChange={(e) => update("brand", e.target.value)} className={selectCls} aria-label="Brand line">
-          <option value="">All brands</option>
-          {brandLines.map((b) => (
-            <option key={b.id} value={b.id}>
-              {b.label}
-            </option>
-          ))}
-        </select>
+      <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         <select
           value={model}
           onChange={(e) => update("model", e.target.value)}
           className={selectCls}
           aria-label="Model"
-          disabled={!brand}
         >
-          <option value="">{brand ? "All models" : "Pick model"}</option>
+          <option value="">All models</option>
           {models.map((m) => (
             <option key={m} value={m}>
               {m}
-            </option>
-          ))}
-        </select>
-        <select value={style} onChange={(e) => update("style", e.target.value)} className={selectCls} aria-label="Kit style">
-          <option value="">All styles</option>
-          {kitStyles.map((s) => (
-            <option key={s} value={s}>
-              {s}
             </option>
           ))}
         </select>
