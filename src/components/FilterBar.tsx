@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, useTransition } from "react";
+import { useCallback, useEffect, useState, startTransition } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import { brandLines } from "@/lib/site";
@@ -9,11 +9,10 @@ import { kitTypes } from "@/lib/products";
 const pillCls =
   "rounded-full border px-4 py-2 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors";
 
-export default function FilterBar({ resultCount }: { resultCount: number }) {
+export default function FilterBar() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [pending, startTransition] = useTransition();
   const [moreOpen, setMoreOpen] = useState(false);
   const [q, setQ] = useState(searchParams.get("q") ?? "");
 
@@ -162,14 +161,6 @@ export default function FilterBar({ resultCount }: { resultCount: number }) {
         </div>
       </div>
 
-      <p className="text-center text-sm text-muted" aria-live="polite">
-        {pending ? "Filtering…" : (
-          <>
-            <span className="font-semibold text-ink">{resultCount}</span>{" "}
-            {resultCount === 1 ? "kit" : "kits"} found
-          </>
-        )}
-      </p>
     </div>
   );
 }

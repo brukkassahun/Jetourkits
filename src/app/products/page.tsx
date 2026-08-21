@@ -65,7 +65,7 @@ export default async function ProductsPage({
 
           <div className="mt-8">
             <Suspense>
-              <FilterBar resultCount={results.length} />
+              <FilterBar />
             </Suspense>
           </div>
 
