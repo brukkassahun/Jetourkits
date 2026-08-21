@@ -38,7 +38,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${dmSans.variable} flex min-h-dvh flex-col`}>
-        <script dangerouslySetInnerHTML={{ __html: 'document.documentElement.classList.add("js")' }} />
         <CurrencyProvider>
           <CartProvider>
             <Header />

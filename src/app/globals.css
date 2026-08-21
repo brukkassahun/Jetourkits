@@ -128,20 +128,6 @@ body {
   animation: glow-pulse 2.8s ease-in-out infinite;
 }
 
-/* Scroll reveal — hidden only with JS active */
-html.js .reveal {
-  opacity: 0;
-  transform: translateY(var(--reveal-y, 30px)) scale(0.985);
-  transition:
-    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-html.js .reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
 /* 3D tilt card (driven by pointer JS) */
 .tilt {
   transform-style: preserve-3d;
@@ -176,10 +162,5 @@ html.js .reveal.is-visible {
   .hero-fade {
     opacity: 1 !important;
     transform: none !important;
-  }
-  html.js .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
   }
 }
