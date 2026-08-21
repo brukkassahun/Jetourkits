@@ -12,7 +12,7 @@ const tabs = [
     title: "Off-Road",
     headline: "Built for the trail",
     desc: "Steel bumpers, rock sliders, roof racks, snorkels and expedition armor. Tested on real terrain before they reach your container.",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/terrain-offroad.webp",
     href: "/products?style=Off-Road",
   },
   {
@@ -20,7 +20,7 @@ const tabs = [
     title: "Mecha",
     headline: "Exoskeleton attitude",
     desc: "Angular wide bodies, bolt-on fender flares and aggressive front ends that turn a Jetour into a statement.",
-    image: "https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/terrain-mecha.webp",
     href: "/products?style=Mecha",
   },
   {
@@ -28,7 +28,7 @@ const tabs = [
     title: "Urban Aero",
     headline: "Street presence",
     desc: "Front lips, side skirts, rear diffusers and spoilers. Low-key by day, unmistakable at night.",
-    image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/terrain-urban.webp",
     href: "/products?style=Urban%20Aero",
   },
 ];

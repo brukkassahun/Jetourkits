@@ -35,7 +35,7 @@ export default async function HomePage() {
       tagline: "The off-road flagship.",
       desc: "Mars Explorer full armor, Stargazer aero, LED wings and Ironclad bumpers — our widest platform.",
       from: "$420",
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80",
+      image: "/images/model-t2.webp",
       href: "/products?model=T2",
       count: products.filter((p) => p.model === "T2").length,
     },
@@ -45,7 +45,7 @@ export default async function HomePage() {
       tagline: "The original Traveller.",
       desc: "Trail fender flares, roof racks, snorkels and front bumpers for the model that started the adventure line.",
       from: "$380",
-      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1000&q=80",
+      image: "/images/model-t1.webp",
       href: "/products?model=T1%20%2F%20Traveller",
       count: products.filter((p) => p.model === "T1 / Traveller").length,
     },
@@ -55,7 +55,7 @@ export default async function HomePage() {
       tagline: "Heavy-duty expedition.",
       desc: "Military-grade chassis armor, larger bull bars and reinforced side steps built for the G700's scale.",
       from: "$560",
-      image: "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1000&q=80",
+      image: "/images/model-g700.webp",
       href: "/products?model=G700",
       count: products.filter((p) => p.model === "G700").length,
     },
@@ -216,7 +216,7 @@ export default async function HomePage() {
       {/* 04 — OEM-fit full-bleed */}
       <section className="relative h-[70dvh] min-h-[500px] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=2000&q=80"
+          src="/images/oem-fit.webp"
           alt="Jetour kit installation"
           fill
           className="object-cover"
@@ -430,8 +430,8 @@ export default async function HomePage() {
             <div className="relative mx-auto mt-12 max-w-5xl">
               <div className="absolute -inset-px border border-accent/30" />
               <BeforeAfter
-                beforeSrc="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1600&q=80"
-                afterSrc="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1600&q=80"
+                beforeSrc="/images/before-stock.webp"
+                afterSrc="/images/after-build.webp"
                 beforeClassName="grayscale-[0.85] brightness-[0.6] contrast-[0.9]"
                 afterClassName="saturate-[1.15] contrast-[1.05]"
                 beforeLabel="Stock"
