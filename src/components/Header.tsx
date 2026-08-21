@@ -48,7 +48,7 @@ export default function Header() {
           className="font-display text-lg font-medium uppercase tracking-[0.28em] text-ink transition-colors"
           aria-label={site.name}
         >
-          Jetour<span className="text-accent">kits</span>
+          {site.name}
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

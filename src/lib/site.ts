@@ -1,12 +1,12 @@
 export const site = {
-  name: "JETOURKITS",
-  tagline: "Premium Body Kits & Mods for Jetour T1, T2 & G700",
+  name: "Jetour T2 Parts",
+  tagline: "Premium Aftermarket Parts for Jetour T2",
   description:
-    "Factory-direct body kits, armor and aero upgrades for Jetour T1, T2 and G700. OEM-fit guaranteed, shipped worldwide.",
+    "Premium wholesale aftermarket parts for the Jetour T2. Sourced through our network of ISO 9001 & IATF 16949 certified manufacturing partners.",
   phone: "+86 138 0000 0000",
   whatsapp: "8613800000000",
   wechat: "JETOURKITS",
-  email: "sales@jetourkits.com",
+  email: "contact@jetourt2parts.com",
   address: "Guangzhou Auto Parts District, China",
 };
 
