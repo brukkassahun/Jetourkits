@@ -10,7 +10,7 @@ const faqData = [
     questions: [
       {
         q: "What is the minimum order quantity (MOQ)?",
-        a: "MOQ varies by product. Body kits typically require 3-10 units, wheels require sets of 4, and tires require 20 units. Each product page displays its specific MOQ. Some accessories have no minimum order.",
+        a: "MOQ varies by product. Body kits typically require 3–10 units, wheels require sets of 4, and tires require 20 units. Each product page displays its specific MOQ. Some accessories have no minimum order.",
       },
       {
         q: "How do I place a wholesale order?",
@@ -60,7 +60,7 @@ const faqData = [
       },
       {
         q: "How long does delivery take?",
-        a: "Delivery times vary by destination and shipping method. UAE: 3-5 days, GCC: 5-7 days, Middle East: 7-10 days, Europe: 10-14 days, Africa: 12-18 days, Asia: 7-12 days, North America: 12-18 days. Express air freight is available for urgent orders.",
+        a: "Delivery times vary by destination and shipping method. UAE: 3–5 days, GCC: 5–7 days, Middle East: 7–10 days, Europe: 10–14 days, Africa: 12–18 days, Asia: 7–12 days, North America: 12–18 days. Express air freight is available for urgent orders.",
       },
       {
         q: "Which shipping carriers do you use?",
@@ -77,7 +77,7 @@ const faqData = [
     questions: [
       {
         q: "Are your parts compatible with all Jetour T2 models?",
-        a: "Our parts are designed to fit Jetour T2 models from 2023-2025. Each product page includes specific fitment information. We recommend verifying compatibility before ordering. Contact us if you are unsure about fitment for your specific model year.",
+        a: "Our parts are designed to fit Jetour T2 models from 2023–2025. Each product page includes specific fitment information. We recommend verifying compatibility before ordering. Contact us if you are unsure about fitment for your specific model year.",
       },
       {
         q: "Where are your products manufactured?",

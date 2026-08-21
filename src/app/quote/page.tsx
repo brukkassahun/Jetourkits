@@ -174,9 +174,9 @@ export default function QuotePage() {
                 >
                   <option value="">When do you need delivery?</option>
                   <option value="ASAP">ASAP (Urgent)</option>
-                  <option value="1-2 weeks">1-2 weeks</option>
+                  <option value="1-2 weeks">1–2 weeks</option>
                   <option value="1 month">1 month</option>
-                  <option value="2-3 months">2-3 months</option>
+                  <option value="2-3 months">2–3 months</option>
                   <option value="Flexible">Flexible / Planning ahead</option>
                 </select>
               </div>

@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata = {
   title: "About Us",
-  description: `About ${site.name} - Premium wholesale aftermarket parts for the Jetour T2`,
+  description: `About ${site.name} — Premium wholesale aftermarket parts for the Jetour T2`,
 };
 
 export default function AboutPage() {

@@ -46,7 +46,7 @@ export default function ContactPage() {
     {
       icon: Clock,
       label: "Business Hours",
-      value: "Mon - Sat: 9:00 AM - 6:00 PM (Multiple time zones)",
+      value: "Mon–Sat: 9:00 AM–6:00 PM (Multiple time zones)",
       href: null,
     },
   ];

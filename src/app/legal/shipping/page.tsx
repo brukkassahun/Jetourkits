@@ -9,18 +9,18 @@ export const metadata = {
 
 export default function ShippingPolicyPage() {
   const shippingRates = [
-    { country: "United Arab Emirates", code: "AE", baseRate: 50, perKgRate: 6, estimatedDays: "3-5 business days" },
-    { country: "Saudi Arabia", code: "SA", baseRate: 120, perKgRate: 12, estimatedDays: "5-7 business days" },
-    { country: "Qatar", code: "QA", baseRate: 140, perKgRate: 14, estimatedDays: "5-7 business days" },
-    { country: "Kuwait", code: "KW", baseRate: 130, perKgRate: 13, estimatedDays: "5-7 business days" },
-    { country: "Oman", code: "OM", baseRate: 140, perKgRate: 14, estimatedDays: "5-7 business days" },
-    { country: "Bahrain", code: "BH", baseRate: 130, perKgRate: 13, estimatedDays: "5-7 business days" },
-    { country: "United Kingdom", code: "GB", baseRate: 380, perKgRate: 18, estimatedDays: "10-14 business days" },
-    { country: "Germany", code: "DE", baseRate: 400, perKgRate: 19, estimatedDays: "10-14 business days" },
-    { country: "France", code: "FR", baseRate: 400, perKgRate: 19, estimatedDays: "10-14 business days" },
-    { country: "United States", code: "US", baseRate: 480, perKgRate: 22, estimatedDays: "12-18 business days" },
-    { country: "Canada", code: "CA", baseRate: 480, perKgRate: 22, estimatedDays: "12-18 business days" },
-    { country: "Australia", code: "AU", baseRate: 420, perKgRate: 19, estimatedDays: "12-17 business days" },
+    { country: "United Arab Emirates", code: "AE", baseRate: 50, perKgRate: 6, estimatedDays: "3–5 business days" },
+    { country: "Saudi Arabia", code: "SA", baseRate: 120, perKgRate: 12, estimatedDays: "5–7 business days" },
+    { country: "Qatar", code: "QA", baseRate: 140, perKgRate: 14, estimatedDays: "5–7 business days" },
+    { country: "Kuwait", code: "KW", baseRate: 130, perKgRate: 13, estimatedDays: "5–7 business days" },
+    { country: "Oman", code: "OM", baseRate: 140, perKgRate: 14, estimatedDays: "5–7 business days" },
+    { country: "Bahrain", code: "BH", baseRate: 130, perKgRate: 13, estimatedDays: "5–7 business days" },
+    { country: "United Kingdom", code: "GB", baseRate: 380, perKgRate: 18, estimatedDays: "10–14 business days" },
+    { country: "Germany", code: "DE", baseRate: 400, perKgRate: 19, estimatedDays: "10–14 business days" },
+    { country: "France", code: "FR", baseRate: 400, perKgRate: 19, estimatedDays: "10–14 business days" },
+    { country: "United States", code: "US", baseRate: 480, perKgRate: 22, estimatedDays: "12–18 business days" },
+    { country: "Canada", code: "CA", baseRate: 480, perKgRate: 22, estimatedDays: "12–18 business days" },
+    { country: "Australia", code: "AU", baseRate: 420, perKgRate: 19, estimatedDays: "12–17 business days" },
   ];
 
   return (
@@ -101,10 +101,10 @@ export default function ShippingPolicyPage() {
               </h2>
               <ul className="space-y-2 text-muted-foreground list-disc pl-5">
                 <li>
-                  <strong className="text-ink">Order Processing:</strong> 1-2 business days after order confirmation and payment receipt.
+                  <strong className="text-ink">Order Processing:</strong> 1–2 business days after order confirmation and payment receipt.
                 </li>
                 <li>
-                  <strong className="text-ink">Custom Orders:</strong> 5-10 business days depending on specifications.
+                  <strong className="text-ink">Custom Orders:</strong> 5–10 business days depending on specifications.
                 </li>
                 <li>
                   <strong className="text-ink">Large Orders:</strong> Orders over $25,000 may require additional processing time. We will notify you.
@@ -126,13 +126,13 @@ export default function ShippingPolicyPage() {
               </p>
               <ul className="space-y-2 text-muted-foreground list-disc pl-5 mt-2">
                 <li>
-                  <strong className="text-ink">Air Freight:</strong> Fastest option, recommended for urgent orders (3-7 days to most destinations)
+                  <strong className="text-ink">Air Freight:</strong> Fastest option, recommended for urgent orders (3–7 days to most destinations)
                 </li>
                 <li>
-                  <strong className="text-ink">Sea Freight:</strong> Most economical for large orders, ideal for non-urgent deliveries (15-30 days)
+                  <strong className="text-ink">Sea Freight:</strong> Most economical for large orders, ideal for non-urgent deliveries (15–30 days)
                 </li>
                 <li>
-                  <strong className="text-ink">Express Courier:</strong> DHL, FedEx, or Aramex for smaller packages (3-5 days)
+                  <strong className="text-ink">Express Courier:</strong> DHL, FedEx, or Aramex for smaller packages (3–5 days)
                 </li>
                 <li>
                   <strong className="text-ink">Local Delivery (UAE):</strong> Same-day or next-day delivery available within Dubai and Sharjah
@@ -150,7 +150,7 @@ export default function ShippingPolicyPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Shipping weight is calculated using the greater of actual weight or dimensional weight (length × width × height / 5000).
-                The total shipping weight displayed at checkout includes product weight plus estimated packaging materials (typically 5-10% addition).
+                The total shipping weight displayed at checkout includes product weight plus estimated packaging materials (typically 5–10% addition).
               </p>
               <p className="text-muted-foreground leading-relaxed mt-3">
                 Individual product weights are listed on each product page. You can estimate your total shipping cost by adding the
