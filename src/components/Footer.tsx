@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-line pt-8 text-xs text-faint sm:flex-row">
-          <p>© {new Date().getFullYear()} Jetour T2 Parts. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Jetour Kits. All rights reserved.</p>
           <p>Wholesale Sourcing · ISO 9001:2015 · IATF 16949</p>
         </div>
       </div>

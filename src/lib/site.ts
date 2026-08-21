@@ -1,5 +1,5 @@
 export const site = {
-  name: "Jetour T2 Parts",
+  name: "Jetour Kits",
   tagline: "Premium Aftermarket Parts for Jetour T2",
   description:
     "Premium wholesale aftermarket parts for the Jetour T2. Sourced through our network of ISO 9001 & IATF 16949 certified manufacturing partners.",
