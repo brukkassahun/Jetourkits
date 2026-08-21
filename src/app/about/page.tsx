@@ -235,7 +235,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
         <div className="relative overflow-hidden rounded-3xl bg-accent px-6 py-14 sm:px-12 sm:py-20 lg:px-16 lg:py-24">
           <div className="relative z-10 max-w-2xl">
-            <p className="font-sans text-xs font-bold uppercase tracking-[0.14em] text-white/80">Join the Team</p>
+            <p className="font-sans text-xs font-bold uppercase tracking-[0.14em] text-white/80">Get Started</p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] text-white sm:text-4xl lg:text-5xl">
               Ready to upgrade your Jetour?
             </h2>
