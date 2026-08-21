@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowLeft, HelpCircle, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { whatsappLink } from "@/lib/site";
 
 const faqData = [
   {
@@ -110,7 +111,7 @@ const faqData = [
       },
       {
         q: "Can I cancel my order?",
-        a: "Orders may only be cancelled within 24 hours of placement and only if the order status has not yet moved to \"Processing.\" Once an order is being processed or has shipped, cancellation is not possible. A 10% administrative fee applies to all cancelled orders.",
+        a: 'Orders may only be cancelled within 24 hours of placement and only if the order status has not yet moved to "Processing." Once an order is being processed or has shipped, cancellation is not possible. A 10% administrative fee applies to all cancelled orders.',
       },
     ],
   },
@@ -124,28 +125,26 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="min-h-screen">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
-        >
+    <main className="min-h-screen bg-cream">
+      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
+        <Link href="/" className="mb-8 inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-accent">
           <ArrowLeft className="h-4 w-4" />
           Back to home
         </Link>
 
-        <div className="text-center mb-10">
-          <h1 className="text-3xl lg:text-4xl font-display font-bold text-ink mb-3">Frequently Asked Questions</h1>
-          <p className="text-muted-foreground">
+        <div className="mb-10 text-center">
+          <p className="eyebrow">Support</p>
+          <h1 className="display-lg mt-3">Frequently Asked Questions</h1>
+          <p className="mt-4 text-muted">
             Find answers to common questions about our wholesale services.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           {faqData.map((section) => (
             <div key={section.category}>
-              <h2 className="text-lg font-display font-bold text-ink mb-4 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-accent" />
+              <h2 className="title mb-4 flex items-center gap-2">
+                <HelpCircle className="h-5 w-5 text-accent" strokeWidth={1.5} />
                 {section.category}
               </h2>
               <div className="space-y-2">
@@ -155,21 +154,21 @@ export default function FAQPage() {
                   return (
                     <div
                       key={key}
-                      className="bg-card rounded-lg border border-border overflow-hidden"
+                      className="overflow-hidden rounded-2xl border border-line bg-card"
                     >
                       <button
                         onClick={() => toggleItem(key)}
-                        className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors"
+                        className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-paper"
                       >
-                        <span className="font-medium text-sm text-ink pr-4">{item.q}</span>
+                        <span className="pr-4 text-sm font-semibold text-ink">{item.q}</span>
                         {isOpen ? (
-                          <ChevronUp className="w-4 h-4 text-accent shrink-0" />
+                          <ChevronUp className="h-4 w-4 shrink-0 text-ink" strokeWidth={1.5} />
                         ) : (
-                          <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" />
+                          <ChevronDown className="h-4 w-4 shrink-0 text-muted" strokeWidth={1.5} />
                         )}
                       </button>
                       {isOpen && (
-                        <div className="px-4 pb-4 text-muted-foreground text-sm leading-relaxed border-t border-border pt-3">
+                        <div className="border-t border-line px-4 pb-4 pt-3 text-sm leading-relaxed text-muted">
                           {item.a}
                         </div>
                       )}
@@ -181,25 +180,17 @@ export default function FAQPage() {
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/20 rounded-2xl p-8 text-center">
-          <MessageCircle className="w-10 h-10 text-accent mx-auto mb-3" />
-          <h2 className="text-xl font-display font-bold text-ink mb-2">Still Have Questions?</h2>
-          <p className="text-muted-foreground mb-4 max-w-md mx-auto">
+        <div className="mt-12 rounded-3xl bg-charcoal p-8 text-center">
+          <MessageCircle className="mx-auto mb-3 h-10 w-10 text-accent" strokeWidth={1.5} />
+          <h2 className="title text-white">Still Have Questions?</h2>
+          <p className="mx-auto mb-6 mt-2 max-w-md text-white/70">
             Our sales team is ready to help. Reach out via WhatsApp, email, or phone.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent/90 text-white font-semibold text-sm rounded-full transition-colors"
-            >
+            <Link href="/contact" className="btn-accent">
               Contact Sales
             </Link>
-            <a
-              href="https://wa.me/971501234567"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-card hover:bg-muted border border-border text-ink font-medium text-sm rounded-full transition-colors"
-            >
+            <a href={whatsappLink("Hello! I have a question: ")} target="_blank" rel="noopener noreferrer" className="btn-ghost-light">
               WhatsApp Us
             </a>
           </div>

@@ -13,7 +13,15 @@ const config: Config = {
           soft: "#1F1F1F",
         },
         charcoal: "#141414",
-        muted: "#6B6B6B",
+        muted: {
+          DEFAULT: "#6B6B6B",
+          foreground: "#6B6B6B",
+        },
+        card: {
+          DEFAULT: "#F7F5F0",
+          foreground: "#171814",
+        },
+        border: "#E8E6E1",
         faint: "#A0A0A0",
         line: "#E8E6E1",
         lineDark: "#2A2A2A",
