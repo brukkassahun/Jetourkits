@@ -16,7 +16,7 @@ function StarRating({ rating, reviews }: { rating: number; reviews: number }) {
           return (
             <Star
               key={i}
-              className={`h-3 w-3 ${filled ? "fill-amber-400 text-amber-400" : "text-line"}`}
+              className={`h-3 w-3 ${filled ? "fill-accent text-accent" : "text-line"}`}
               strokeWidth={1.5}
             />
           );
@@ -41,9 +41,9 @@ export default function ProductCard({ product: p }: { product: Product }) {
   const installment = p.price / 4;
 
   return (
-    <div className="group flex flex-col rounded-2xl border border-line bg-panel shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_-16px_rgba(14,122,61,0.18)]">
+    <div className="group card-coda flex flex-col">
       {/* Image */}
-      <Link href={`/products/${p.slug}`} className="relative block aspect-[4/3] overflow-hidden rounded-t-2xl bg-elevated">
+      <Link href={`/products/${p.slug}`} className="relative block aspect-[4/3] overflow-hidden rounded-t-3xl bg-paper">
         <Image
           src={p.images[0]}
           alt={p.name}
@@ -52,7 +52,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
         />
         {discount > 0 && (
-          <span className="absolute left-3 top-3 rounded-full bg-flare px-2.5 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-white">
+          <span className="absolute left-3 top-3 rounded-full bg-ink px-2.5 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-cream">
             -{discount}%
           </span>
         )}
@@ -69,7 +69,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
           <span className="font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-faint">
             {p.brand} {p.model}
           </span>
-          <span className="rounded-full border border-line bg-elevated px-2 py-0.5 font-sans text-[10px] font-semibold text-muted">
+          <span className="rounded-full border border-line bg-paper px-2 py-0.5 font-sans text-[10px] font-semibold text-muted">
             {p.kitType}
           </span>
         </div>
@@ -88,7 +88,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
 
         <div className="mt-auto pt-4">
           <div className="flex items-baseline gap-2">
-            <p className="font-display text-xl font-bold text-ink">{format(p.price)}</p>
+            <p className="font-display text-xl font-black text-ink">{format(p.price)}</p>
             {p.originalPrice && (
               <p className="text-xs text-faint line-through">{format(p.originalPrice)}</p>
             )}
@@ -99,7 +99,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
 
           <button
             onClick={() => add(p.slug)}
-            className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-ink/15 bg-ink py-2.5 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-accent hover:border-accent"
+            className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-ink py-2.5 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-cream transition-all duration-300 hover:bg-accent"
             aria-label={`Add ${p.name} to cart`}
           >
             <Plus className="h-4 w-4" strokeWidth={2} />

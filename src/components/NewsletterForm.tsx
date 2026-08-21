@@ -3,7 +3,11 @@
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
-export default function NewsletterForm() {
+interface NewsletterFormProps {
+  variant?: "light" | "dark";
+}
+
+export default function NewsletterForm({ variant = "light" }: NewsletterFormProps) {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
 
@@ -19,26 +23,36 @@ export default function NewsletterForm() {
 
   if (done) {
     return (
-      <p className="flex items-center gap-2 border border-success/40 bg-success/5 px-4 py-3 text-sm text-success">
-        <Check className="h-4 w-4" strokeWidth={1.5} /> You&apos;re on the list — new kit drops land in your inbox first.
+      <p className={`flex items-center gap-2 rounded-full px-4 py-3 text-sm ${
+        variant === "dark" ? "bg-white/10 text-cream" : "bg-accent/10 text-accent"
+      }`}>
+        <Check className="h-4 w-4" strokeWidth={1.5} /> You&apos;re on the list.
       </p>
     );
   }
 
+  const inputBase = "w-full rounded-full border bg-transparent px-4 py-2.5 text-sm outline-none transition-colors";
+  const inputTheme = variant === "dark"
+    ? "border-white/20 text-cream placeholder:text-white/40 focus:border-cream"
+    : "border-line text-ink placeholder:text-faint focus:border-ink";
+  const btnTheme = variant === "dark"
+    ? "border-white/20 text-cream hover:bg-cream hover:text-charcoal"
+    : "border-ink/20 text-ink hover:bg-ink hover:text-cream";
+
   return (
-    <form onSubmit={submit} className="flex items-end gap-3">
+    <form onSubmit={submit} className="flex items-center gap-2">
       <input
         type="email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="you@example.com"
-        className="w-full border-0 border-b border-line bg-transparent px-0 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-faint focus:border-accent"
+        className={`${inputBase} ${inputTheme}`}
       />
       <button
         type="submit"
         aria-label="Subscribe"
-        className="flex h-10 w-10 shrink-0 items-center justify-center border border-ink/25 text-ink transition-colors duration-300 hover:bg-ink hover:text-white"
+        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${btnTheme}`}
       >
         <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
       </button>

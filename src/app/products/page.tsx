@@ -49,21 +49,21 @@ export default async function ProductsPage({
   const hotDeals = results.filter((p) => p.hotDeal).slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-void">
+    <div className="min-h-screen bg-cream">
       {/* Search hero */}
-      <section className="border-b border-line bg-panel">
+      <section className="border-b border-line bg-cream">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
           <div className="text-center">
-            <h1 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
-              Find your perfect <span className="text-accent">Jetour kit</span>
+            <p className="eyebrow">All Kits</p>
+            <h1 className="display-lg mx-auto mt-5 max-w-3xl">
+              Find your perfect Jetour upgrade.
             </h1>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-muted sm:text-base">
-              Search, compare and upgrade. Every part is CAD-matched to factory mounting points for
-              the Jetour T2, T1 and G700.
+            <p className="mx-auto mt-4 max-w-xl text-sm text-muted sm:text-base">
+              Search, compare and upgrade. Every part is CAD-matched to factory mounting points.
             </p>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-10">
             <Suspense>
               <FilterBar />
             </Suspense>
@@ -75,7 +75,7 @@ export default async function ProductsPage({
               <Link
                 key={pill.label}
                 href={pill.href}
-                className="rounded-full border border-line bg-void px-4 py-2 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:bg-accent-dim hover:text-accent"
+                className="rounded-full border border-line bg-paper px-4 py-2 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:border-ink hover:text-accent"
               >
                 {pill.label}
               </Link>
@@ -89,8 +89,9 @@ export default async function ProductsPage({
         <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
           <div className="mb-5 flex items-end justify-between">
             <div>
-              <h2 className="font-display text-2xl font-bold text-ink">Top deals of the day</h2>
-              <p className="mt-1 text-sm text-muted">Limited stock on our best-selling kits.</p>
+              <p className="eyebrow">Limited Stock</p>
+              <h2 className="title mt-2">Top deals of the day</h2>
+              <p className="mt-1 text-sm text-muted">Best-selling kits at special pricing.</p>
             </div>
             <Link
               href="/products?sort=price-desc"
@@ -111,8 +112,8 @@ export default async function ProductsPage({
 
       {/* Main results */}
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
-        <div className="mb-5 flex items-end justify-between">
-          <h2 className="font-display text-2xl font-bold text-ink">
+        <div className="mb-6 flex items-end justify-between border-b border-line pb-4">
+          <h2 className="title">
             {isFiltering ? "Results" : "All kits"}
           </h2>
           <p className="text-sm text-muted">
@@ -128,24 +129,21 @@ export default async function ProductsPage({
             ))}
           </div>
         ) : (
-          <div className="mt-6 rounded-2xl border border-dashed border-line bg-panel px-6 py-16 text-center">
-            <h2 className="font-display text-xl font-bold text-ink">No kits match</h2>
+          <div className="mt-6 rounded-3xl border border-dashed border-line bg-paper px-6 py-16 text-center">
+            <h2 className="title">No kits match</h2>
             <p className="mx-auto mt-1.5 max-w-sm text-sm text-muted">
               Try clearing a filter — or tell us your vehicle and we&apos;ll source the kit from the
               factory network.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/products"
-                className="rounded-full border border-line px-6 py-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-ink transition-colors hover:border-accent hover:text-accent"
-              >
+              <Link href="/products" className="btn-ghost">
                 Clear filters
               </Link>
               <a
                 href={whatsappLink("Hello! Please source this kit for me: ")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-accent px-6 py-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-accent-strong"
+                className="btn-primary"
               >
                 Request this kit
               </a>

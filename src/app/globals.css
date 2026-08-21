@@ -2,18 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Midnight Transformation Lab — dark base */
+/* Coda-inspired design system — warm cream, near-black, bold accent blocks */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-void text-foreground font-sans antialiased;
+  @apply bg-cream text-ink font-sans antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  @apply bg-accent text-white;
+  @apply bg-ink text-cream;
 }
 
 ::-webkit-scrollbar {
@@ -21,10 +21,10 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-void;
+  @apply bg-cream;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-line rounded-none;
+  @apply bg-line rounded-full;
 }
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-faint;
@@ -33,32 +33,53 @@ body {
 /* Typography + UI primitives */
 @layer components {
   .eyebrow {
-    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.34em] text-accent;
+    @apply inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-1.5 font-sans text-[11px] font-bold uppercase tracking-[0.22em] text-ink/80;
+  }
+  .eyebrow-dark {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-1.5 font-sans text-[11px] font-bold uppercase tracking-[0.22em] text-white/80;
   }
   .display-xl {
-    @apply font-display font-extrabold uppercase leading-[0.92] tracking-[-0.01em];
+    @apply font-display text-5xl font-black uppercase leading-[0.92] tracking-[-0.02em] sm:text-6xl lg:text-7xl;
   }
   .display-lg {
-    @apply font-display font-bold leading-[1.04] tracking-[-0.005em];
+    @apply font-display text-3xl font-black uppercase leading-[0.95] tracking-[-0.01em] sm:text-4xl lg:text-5xl;
+  }
+  .display-md {
+    @apply font-display text-2xl font-black uppercase leading-[1] tracking-[-0.01em] sm:text-3xl;
+  }
+  .title {
+    @apply font-display text-xl font-bold uppercase tracking-[-0.01em];
   }
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden bg-accent px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-accent-strong hover:shadow-[0_12px_32px_-8px_rgba(14,122,61,0.5)];
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-ink/85 hover:scale-[1.02] active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-accent-strong hover:scale-[1.02] active:scale-[0.98];
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 border border-ink/25 px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:border-accent hover:text-accent;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 px-7 py-3.5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-300 hover:border-ink hover:bg-ink hover:text-cream;
   }
   .btn-ghost-light {
-    @apply inline-flex items-center justify-center gap-2 border border-white/40 px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-void;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3.5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-ink;
   }
   .hairline-t {
     @apply border-t border-line;
   }
-  .input-lux {
-    @apply w-full appearance-none border border-line bg-elevated px-4 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.14em] text-foreground outline-none transition-colors focus:border-accent [&>option]:bg-panel;
+  .hairline-b {
+    @apply border-b border-line;
+  }
+  .input-coda {
+    @apply w-full appearance-none rounded-full border border-line bg-paper px-5 py-3.5 font-sans text-sm font-medium text-ink outline-none transition-colors focus:border-ink;
+  }
+  .card-coda {
+    @apply overflow-hidden rounded-3xl border border-line bg-paper transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.12)];
+  }
+  .section-pad {
+    @apply px-4 py-16 sm:px-6 sm:py-20 lg:py-28;
   }
 }
 
-/* Shine sweep on hover (buttons, cards) */
+/* Shine sweep on hover */
 .shine {
   position: relative;
   overflow: hidden;
@@ -100,16 +121,6 @@ body {
   animation: kenburns 9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Word-by-word hero headline reveal */
-@keyframes word-in {
-  from { opacity: 0; transform: translateY(110%) rotate(4deg); }
-  to { opacity: 1; transform: translateY(0) rotate(0); }
-}
-.word-in {
-  display: inline-block;
-  animation: word-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
 /* Floating glow orbs */
 @keyframes float-y {
   0%, 100% { transform: translateY(0); }
@@ -119,48 +130,15 @@ body {
   animation: float-y 7s ease-in-out infinite;
 }
 
-/* Volt glow pulse for the primary CTA */
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 8px 28px -6px rgba(14, 122, 61, 0.4); }
-  50% { box-shadow: 0 12px 44px -6px rgba(14, 122, 61, 0.6); }
-}
-.animate-glow {
-  animation: glow-pulse 2.8s ease-in-out infinite;
-}
-
-/* 3D tilt card (driven by pointer JS) */
-.tilt {
-  transform-style: preserve-3d;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, box-shadow 0.45s;
-}
-.tilt.is-tilting {
-  transition: transform 0.08s linear, border-color 0.3s, box-shadow 0.45s;
-}
-
-/* Outlined ghost word */
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(14, 122, 61, 0.5);
+/* Arc / semi-circle decorative transition */
+.arc-top {
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .kenburns,
-  .word-in,
-  .animate-float,
-  .animate-glow {
+  .animate-float {
     animation: none !important;
-  }
-  /* Anime/letter hero — show immediately, no motion */
-  .hero-letter {
-    transform: none !important;
-    opacity: 1 !important;
-  }
-  .hero-underline {
-    transform: scaleX(1) !important;
-  }
-  .hero-fade {
-    opacity: 1 !important;
-    transform: none !important;
   }
 }

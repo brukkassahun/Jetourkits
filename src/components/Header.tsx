@@ -38,13 +38,11 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
-          transparent
-            ? "border-transparent bg-white md:bg-white/55 md:backdrop-blur-md"
-            : "border-line bg-white backdrop-blur-md"
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+          transparent ? "border-transparent bg-cream/80 backdrop-blur-md" : "border-line bg-cream/95 backdrop-blur-md"
         }`}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <Logo variant="dark" />
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -52,7 +50,7 @@ export default function Header() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`font-display text-xs font-semibold uppercase tracking-[0.22em] transition-colors hover:text-accent ${
+                className={`font-sans text-[11px] font-bold uppercase tracking-[0.22em] transition-colors hover:text-accent ${
                   pathname === l.href ? "text-accent" : "text-ink"
                 }`}
               >
@@ -64,12 +62,12 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setCartOpen(true)}
-              className="relative flex h-10 w-10 items-center justify-center text-muted transition-colors hover:text-ink"
+              className="relative flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink"
               aria-label="Open cart"
             >
-              <ShoppingCart className="h-5 w-5" strokeWidth={1.5} />
+              <ShoppingCart className="h-[18px] w-[18px]" strokeWidth={1.5} />
               {count > 0 && (
-                <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 font-display text-[10px] font-semibold text-white">
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 font-sans text-[10px] font-bold text-white">
                   {count}
                 </span>
               )}
@@ -77,15 +75,12 @@ export default function Header() {
             <div className="hidden sm:block">
               <CurrencySelector />
             </div>
-            <Link
-              href="/products"
-              className="hidden border border-ink/25 px-5 py-2.5 font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-ink hover:text-white sm:block"
-            >
+            <Link href="/products" className="btn-primary hidden sm:flex">
               Shop Kits
             </Link>
             <button
               onClick={() => setOpen(!open)}
-              className="flex h-10 w-10 items-center justify-center text-ink md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink md:hidden"
               aria-label="Toggle menu"
               aria-expanded={open}
             >
@@ -95,9 +90,9 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile menu — sibling of header so it paints independently */}
+      {/* Mobile menu */}
       <div
-        className={`fixed inset-x-0 bottom-0 top-20 z-40 bg-white transition-all duration-300 md:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-16 z-40 bg-cream transition-all duration-300 md:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
@@ -106,7 +101,7 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className={`border-b border-line px-2 py-4 font-display text-sm font-medium uppercase tracking-[0.2em] transition-all ${
+              className={`border-b border-line px-2 py-4 font-sans text-sm font-bold uppercase tracking-[0.2em] transition-all ${
                 open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
               } ${pathname === l.href ? "text-accent" : "text-ink"}`}
               style={{ transitionDelay: `${i * 40}ms` }}
@@ -114,13 +109,10 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/products"
-            className="btn-primary mt-6"
-          >
+          <Link href="/products" className="btn-primary mt-6 justify-center">
             Shop All Kits
           </Link>
-          <div className="mt-4 flex items-center justify-between border border-line px-4 py-3">
+          <div className="mt-4 flex items-center justify-between rounded-full border border-line px-4 py-3">
             <span className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-muted">
               Currency
             </span>

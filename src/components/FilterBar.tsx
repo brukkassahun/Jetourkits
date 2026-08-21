@@ -36,7 +36,6 @@ export default function FilterBar() {
     [router, pathname, searchParams],
   );
 
-  // Debounced text search
   useEffect(() => {
     const current = searchParams.get("q") ?? "";
     if (q === current) return;
@@ -48,7 +47,6 @@ export default function FilterBar() {
 
   return (
     <div className="space-y-4">
-      {/* Big search */}
       <div className="relative mx-auto max-w-2xl">
         <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center">
           <Search className="h-5 w-5 text-faint" strokeWidth={1.5} />
@@ -58,7 +56,7 @@ export default function FilterBar() {
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search kits — bumper, snorkel, roof rack, carbon…"
           type="search"
-          className="h-14 w-full rounded-full border border-line bg-panel pl-12 pr-12 text-base text-ink shadow-sm outline-none transition-all placeholder:text-faint focus:border-accent focus:ring-4 focus:ring-accent-dim"
+          className="h-14 w-full rounded-full border border-line bg-paper pl-12 pr-12 text-base text-ink outline-none transition-all placeholder:text-faint focus:border-ink focus:ring-4 focus:ring-ink/5"
         />
         {q && (
           <button
@@ -71,14 +69,12 @@ export default function FilterBar() {
         )}
       </div>
 
-      {/* Filter row */}
       <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
         <div className="flex flex-wrap items-center justify-center gap-2">
           <select
             value={model}
             onChange={(e) => update("model", e.target.value)}
-            className="h-10 cursor-pointer appearance-none rounded-full border border-line bg-panel pl-4 pr-10 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink outline-none transition-colors focus:border-accent"
-            style={{ backgroundPosition: "right 12px center", backgroundRepeat: "no-repeat" }}
+            className="h-10 cursor-pointer appearance-none rounded-full border border-line bg-paper pl-4 pr-10 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink outline-none transition-colors focus:border-ink"
             aria-label="Model"
           >
             <option value="">All models</option>
@@ -94,8 +90,8 @@ export default function FilterBar() {
             aria-expanded={moreOpen}
             className={`flex h-10 items-center gap-2 rounded-full border px-4 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
               moreOpen || kitType
-                ? "border-accent bg-accent-dim text-accent"
-                : "border-line bg-panel text-ink hover:border-accent hover:text-accent"
+                ? "border-ink bg-ink text-cream"
+                : "border-line bg-paper text-ink hover:border-ink"
             }`}
           >
             <SlidersHorizontal className="h-3.5 w-3.5" />
@@ -105,7 +101,7 @@ export default function FilterBar() {
           <select
             value={sort}
             onChange={(e) => update("sort", e.target.value)}
-            className="h-10 cursor-pointer appearance-none rounded-full border border-line bg-panel pl-4 pr-10 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink outline-none transition-colors focus:border-accent"
+            className="h-10 cursor-pointer appearance-none rounded-full border border-line bg-paper pl-4 pr-10 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink outline-none transition-colors focus:border-ink"
             aria-label="Sort by"
           >
             <option value="featured">Featured</option>
@@ -127,7 +123,6 @@ export default function FilterBar() {
         )}
       </div>
 
-      {/* Kit type panel */}
       <div
         aria-hidden={!moreOpen}
         className={`grid overflow-hidden transition-all duration-300 ${
@@ -139,8 +134,8 @@ export default function FilterBar() {
             onClick={() => update("kitType", "")}
             className={`${pillCls} ${
               !kitType
-                ? "border-accent bg-accent-dim text-accent"
-                : "border-line bg-panel text-muted hover:border-accent hover:text-accent"
+                ? "border-ink bg-ink text-cream"
+                : "border-line bg-paper text-muted hover:border-ink hover:text-ink"
             }`}
           >
             All types
@@ -151,8 +146,8 @@ export default function FilterBar() {
               onClick={() => update("kitType", t === kitType ? "" : t)}
               className={`${pillCls} ${
                 kitType === t
-                  ? "border-accent bg-accent-dim text-accent"
-                  : "border-line bg-panel text-muted hover:border-accent hover:text-accent"
+                  ? "border-ink bg-ink text-cream"
+                  : "border-line bg-paper text-muted hover:border-ink hover:text-ink"
               }`}
             >
               {t}
@@ -160,7 +155,6 @@ export default function FilterBar() {
           ))}
         </div>
       </div>
-
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default function CurrencySelector() {
       <select
         value={code}
         onChange={(e) => setCode(e.target.value as CurrencyCode)}
-        className="appearance-none border border-line bg-elevated py-2 pl-3 pr-8 font-display text-xs font-bold uppercase tracking-wider text-foreground outline-none transition-colors focus:border-accent [&>option]:bg-panel"
+        className="appearance-none rounded-full border border-line bg-paper py-2 pl-4 pr-9 font-sans text-[11px] font-bold uppercase tracking-wider text-ink outline-none transition-colors focus:border-ink [&>option]:bg-paper"
       >
         {currencies.map((c) => (
           <option key={c.code} value={c.code}>
@@ -20,7 +20,7 @@ export default function CurrencySelector() {
           </option>
         ))}
       </select>
-      <ChevronDown className="pointer-events-none absolute right-2.5 h-3.5 w-3.5 text-faint" />
+      <ChevronDown className="pointer-events-none absolute right-3 h-3.5 w-3.5 text-faint" />
     </label>
   );
 }

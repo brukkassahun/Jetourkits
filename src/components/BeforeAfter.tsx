@@ -109,17 +109,17 @@ export default function BeforeAfter({
 
       {/* Divider handle */}
       <div className="absolute inset-y-0 z-10" style={{ left: `${pos}%` }}>
-        <div className="absolute inset-y-0 -left-px w-0.5 bg-accent shadow-[0_0_16px_rgba(14,122,61,0.7)]" />
-        <div className="absolute top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-accent bg-panel text-accent shadow-lg shadow-accent/40">
+        <div className="absolute inset-y-0 -left-px w-0.5 bg-white shadow-[0_0_16px_rgba(255,255,255,0.5)]" />
+        <div className="absolute top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-ink text-cream shadow-lg">
           <ChevronsLeftRight className="h-5 w-5" />
         </div>
       </div>
 
       {/* Labels */}
-      <span className="absolute left-3 top-3 bg-black/60 px-3 py-1.5 font-sans text-[10px] font-bold uppercase tracking-[0.24em] text-white/80 backdrop-blur">
+      <span className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1.5 font-sans text-[10px] font-bold uppercase tracking-[0.24em] text-white/90 backdrop-blur">
         {beforeLabel}
       </span>
-      <span className="absolute right-3 top-3 bg-accent px-3 py-1.5 font-sans text-[10px] font-bold uppercase tracking-[0.24em] text-void">
+      <span className="absolute right-3 top-3 rounded-full bg-cream px-3 py-1.5 font-sans text-[10px] font-bold uppercase tracking-[0.24em] text-ink">
         {afterLabel}
       </span>
     </div>

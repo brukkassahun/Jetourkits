@@ -5,27 +5,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Bright showroom — warm paper base, airy and welcoming
-        void: "#F6F4EE", // page background (warm ivory)
-        panel: "#FFFFFF", // surfaces / cards
-        card: "#FFFFFF",
-        elevated: "#EFEBE1", // inputs / subtle fills
-        line: "#E7E2D4", // hairlines
-        // Primary text — deep warm charcoal (was light-on-dark)
+        // Coda-inspired showroom — warm paper, near-black, bold accent blocks
+        cream: "#FAF9F6",
+        paper: "#FFFFFF",
         ink: {
-          DEFAULT: "#171814",
-          soft: "#33352B",
+          DEFAULT: "#0A0A0A",
+          soft: "#1F1F1F",
         },
-        foreground: "#171814",
-        muted: "#5C604F",
-        faint: "#8B8F7A",
-        // Racing green accent — bright on paper, reads as premium/energetic
+        charcoal: "#141414",
+        muted: "#6B6B6B",
+        faint: "#A0A0A0",
+        line: "#E8E6E1",
+        lineDark: "#2A2A2A",
+        // Bold Coda accent palette
         accent: {
-          DEFAULT: "#0E7A3D",
-          strong: "#0B9A4E",
-          dim: "#DCEDE0",
+          DEFAULT: "#0E7A3D",      // forest green (primary CTA)
+          strong: "#0A5C2E",
+          dim: "#E8F5E9",
         },
-        // Signal orange for deal flags only
+        navy: {
+          DEFAULT: "#1A2744",
+          light: "#2A3E60",
+        },
+        sky: {
+          DEFAULT: "#B8D4E3",
+          soft: "#DDEEF5",
+        },
+        sage: {
+          DEFAULT: "#A3B18A",
+          soft: "#D4DCC9",
+        },
+        // Signal orange for deal flags
         flare: {
           DEFAULT: "#E0571F",
           strong: "#C94A14",
@@ -34,14 +44,12 @@ const config: Config = {
         success: "#0E7A3D",
       },
       fontFamily: {
-        display: ["var(--font-playfair)", "Georgia", "serif"],
-        sans: ["var(--font-dmsans)", "system-ui", "sans-serif"],
+        display: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        "hero-glow":
-          "radial-gradient(70% 90% at 80% 10%, rgba(14,122,61,0.10) 0%, transparent 55%)",
-        blueprint:
-          "repeating-linear-gradient(90deg, rgba(14,122,61,0.05) 0 1px, transparent 1px 90px)",
+        "cream-radial":
+          "radial-gradient(80% 60% at 50% 0%, rgba(20,20,20,0.04) 0%, transparent 60%)",
       },
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
