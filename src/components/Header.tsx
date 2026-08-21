@@ -38,8 +38,8 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
         transparent
-          ? "border-transparent bg-panel md:bg-white/55 md:backdrop-blur-md"
-          : "border-line bg-panel/95 backdrop-blur-md"
+          ? "border-transparent bg-white md:bg-white/55 md:backdrop-blur-md"
+          : "border-line bg-white backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
@@ -100,7 +100,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-x-0 bottom-0 top-20 z-40 bg-panel transition-all duration-300 md:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-20 z-40 bg-white transition-all duration-300 md:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
