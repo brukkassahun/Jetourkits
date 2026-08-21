@@ -66,7 +66,7 @@ export default function HeroCarousel() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-void/95 via-void/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -81,11 +81,11 @@ export default function HeroCarousel() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-2xl"
           >
-            <p className="eyebrow">{slide.price}</p>
-            <h1 className="display-xl mt-4 text-5xl text-ink sm:text-7xl lg:text-8xl">
+            <p className="eyebrow text-white/80">{slide.price}</p>
+            <h1 className="display-xl mt-4 text-5xl text-white sm:text-7xl lg:text-8xl">
               {slide.name}
             </h1>
-            <p className="mt-5 text-lg leading-relaxed text-muted sm:text-xl">
+            <p className="mt-5 text-lg leading-relaxed text-white/80 sm:text-xl">
               {slide.tagline}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -93,7 +93,7 @@ export default function HeroCarousel() {
                 {slide.cta.primary}
                 <ArrowRight className="h-4 w-4" strokeWidth={2} />
               </Link>
-              <Link href={slide.href} className="btn-ghost">
+              <Link href={slide.href} className="btn-ghost-light">
                 {slide.cta.secondary}
               </Link>
             </div>
