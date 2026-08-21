@@ -13,33 +13,33 @@ export default function ReturnsPolicyPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         <Link
           href="/"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
+          className="inline-flex items-center gap-1 text-sm text-muted hover:text-accent transition-colors mb-8"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to home
         </Link>
 
-        <div className="bg-card rounded-xl border border-border p-8 lg:p-12">
+        <div className="bg-panel rounded-xl border border-line p-8 lg:p-12">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center">
-              <XCircle className="w-5 h-5 text-red-400" />
+            <div className="w-10 h-10 bg-flare-dim rounded-lg flex items-center justify-center">
+              <XCircle className="w-5 h-5 text-flare" />
             </div>
             <h1 className="text-3xl lg:text-4xl font-display font-bold text-ink">No Returns & No Refunds Policy</h1>
           </div>
-          <p className="text-muted-foreground mb-8">Last updated: January 1, 2025</p>
+          <p className="text-muted mb-8">Last updated: January 1, 2025</p>
 
           <div className="prose prose-invert max-w-none space-y-8">
-            <div className="bg-red-500/5 border border-red-500/20 rounded-lg p-6 mb-8">
-              <h2 className="text-lg font-display font-bold text-red-400 flex items-center gap-2 mb-3">
+            <div className="bg-flare-dim border border-flare/20 rounded-lg p-6 mb-8">
+              <h2 className="text-lg font-display font-bold text-flare flex items-center gap-2 mb-3">
                 <AlertTriangle className="w-5 h-5" />
                 All Sales Are Final
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
+              <p className="text-muted leading-relaxed mb-3">
                 {site.name} operates on a <strong className="text-ink">strict no-returns, no-refunds</strong> basis.
                 As a wholesale business working directly with factories, we do not accept returns, exchanges, or issue
                 refunds once an order has been placed and paid for.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 By placing an order on our website, you acknowledge and agree that all purchases are final and non-refundable.
                 Please review your order carefully before completing payment.
               </p>
@@ -47,10 +47,10 @@ export default function ReturnsPolicyPage() {
 
             <div>
               <h2 className="text-xl font-display font-bold text-ink mt-8 mb-4 flex items-center gap-2">
-                <XCircle className="w-5 h-5 text-red-400" />
+                <XCircle className="w-5 h-5 text-flare" />
                 Why No Returns?
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 As a wholesale distributor working directly with manufacturers, we operate on very thin margins and volume-based
                 pricing. The cost of processing returns, inspecting items, and restocking inventory at a wholesale level would
                 make our business model unsustainable. Each order is processed and shipped directly from our factory partners
@@ -63,10 +63,10 @@ export default function ReturnsPolicyPage() {
                 <Shield className="w-5 h-5 text-accent" />
                 Quality Assurance
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 While we do not accept returns, we are committed to delivering quality products:
               </p>
-              <ul className="space-y-2 text-muted-foreground list-disc pl-5 mt-3">
+              <ul className="space-y-2 text-muted list-disc pl-5 mt-3">
                 <li>
                   <strong className="text-ink">Pre-Shipment Inspection:</strong> Every item is visually inspected for defects before leaving our facility.
                 </li>
@@ -89,10 +89,10 @@ export default function ReturnsPolicyPage() {
                 <AlertCircle className="w-5 h-5 text-accent" />
                 Order Carefully
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 Please take the following steps before placing your order to ensure you receive exactly what you need:
               </p>
-              <ul className="space-y-2 text-muted-foreground list-disc pl-5 mt-3">
+              <ul className="space-y-2 text-muted list-disc pl-5 mt-3">
                 <li>Verify product specifications, dimensions, and materials on the product page.</li>
                 <li>Confirm the product is compatible with your specific Jetour T2 model year.</li>
                 <li>Double-check quantities and ensure they meet or exceed the stated MOQ.</li>
@@ -103,8 +103,8 @@ export default function ReturnsPolicyPage() {
 
             <div>
               <h2 className="text-xl font-display font-bold text-ink mt-8 mb-4">Samples Available</h2>
-              <div className="bg-accent/5 border border-accent/20 rounded-lg p-4">
-                <p className="text-muted-foreground leading-relaxed">
+              <div className="bg-accent-dim border border-accent/20 rounded-lg p-4">
+                <p className="text-muted leading-relaxed">
                   For first-time buyers or large orders, we offer <strong className="text-accent">sample purchases</strong> at
                   retail price. This allows you to inspect product quality before committing to a bulk order. Sample costs can be
                   credited toward your first wholesale order of $5,000 or more. Contact our sales team to arrange a sample.
@@ -114,7 +114,7 @@ export default function ReturnsPolicyPage() {
 
             <div>
               <h2 className="text-xl font-display font-bold text-ink mt-8 mb-4">Defective Items on Arrival</h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 In the rare event that an item arrives with a clear manufacturing defect (not caused by shipping damage), you must
                 report it within <strong className="text-ink">48 hours</strong> of delivery with clear photos and video evidence
                 of the defect. We will review the claim and, at our sole discretion, may offer a partial credit toward a future
@@ -124,7 +124,7 @@ export default function ReturnsPolicyPage() {
 
             <div>
               <h2 className="text-xl font-display font-bold text-ink mt-8 mb-4">Cancellations</h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 Orders may only be cancelled within <strong className="text-ink">24 hours</strong> of placement and only if the
                 order status has not yet moved to &ldquo;Processing.&rdquo; Once an order is being processed or has shipped,
                 cancellation is not possible under any circumstances. A 10% administrative fee applies to all cancelled orders.
@@ -136,7 +136,7 @@ export default function ReturnsPolicyPage() {
                 <CheckCircle className="w-5 h-5 text-accent" />
                 Agreement
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 By completing a purchase on this website, you acknowledge that you have read, understood, and agree to this No
                 Returns & No Refunds Policy. This policy is part of our Terms & Conditions and is legally binding.
               </p>
@@ -144,11 +144,11 @@ export default function ReturnsPolicyPage() {
 
             <div>
               <h2 className="text-xl font-display font-bold text-ink mt-8 mb-4">Questions?</h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 If you have any questions about a product before ordering, please contact us. We are happy to provide additional
                 photos, specifications, or guidance to help you make an informed purchase decision.
               </p>
-              <div className="bg-muted rounded-lg p-4 text-muted-foreground mt-3">
+              <div className="bg-elevated rounded-lg p-4 text-muted mt-3">
                 <p>
                   <strong className="text-ink">Email:</strong>{" "}
                   <a href="mailto:sales@jetourt2parts.com" className="text-accent hover:underline">

@@ -80,7 +80,7 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         <Link
           href="/"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
+          className="inline-flex items-center gap-1 text-sm text-muted hover:text-accent transition-colors mb-8"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to home
@@ -89,7 +89,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h1 className="text-3xl lg:text-4xl font-display font-bold text-ink mb-4">Contact Sales</h1>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-muted mb-8 leading-relaxed">
               We are a specialized Jetour T2 parts sourcing company working with a network of ISO 9001 & IATF 16949 certified
               manufacturing partners. Get in touch with our team for wholesale pricing, product inquiries, or custom orders.
             </p>
@@ -97,11 +97,11 @@ export default function ContactPage() {
             <div className="space-y-6 mb-8">
               {contactInfo.map((info) => (
                 <div key={info.label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-accent-dim rounded-lg flex items-center justify-center shrink-0">
                     <info.icon className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
+                    <p className="text-sm text-muted">{info.label}</p>
                     {info.href ? (
                       <a
                         href={info.href}
@@ -117,91 +117,91 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="bg-card rounded-xl border border-border p-6 mb-8">
+            <div className="bg-panel rounded-xl border border-line p-6 mb-8">
               <h3 className="font-semibold text-ink mb-4">Partner Certifications</h3>
               <div className="grid grid-cols-3 gap-4">
                 {certifications.map((cert) => (
                   <div key={cert.label} className="text-center">
                     <cert.icon className="w-6 h-6 text-accent mx-auto mb-1" />
                     <p className="text-xs font-medium text-ink">{cert.label}</p>
-                    <p className="text-[10px] text-muted-foreground">{cert.sub}</p>
+                    <p className="text-[10px] text-muted">{cert.sub}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-card rounded-xl border border-border p-6">
+            <div className="bg-panel rounded-xl border border-line p-6">
               <h3 className="font-semibold text-ink mb-4">Quick Actions</h3>
               <div className="space-y-3">
                 {quickActions.map((action) => (
                   <Link
                     key={action.href}
                     href={action.href}
-                    className="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                    className="flex items-center justify-between p-3 rounded-lg bg-elevated/50 hover:bg-elevated transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <action.icon className="w-5 h-5 text-accent" />
                       <span className="text-sm text-ink">{action.label}</span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                    <ArrowRight className="w-4 h-4 text-muted" />
                   </Link>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="bg-card rounded-xl border border-border p-6 lg:p-8">
+          <div className="bg-panel rounded-xl border border-line p-6 lg:p-8">
             <h2 className="text-xl font-display font-bold text-ink mb-2">Send a Message</h2>
-            <p className="text-muted-foreground text-sm mb-6">
+            <p className="text-muted text-sm mb-6">
               Typical response time: within 24 hours. For urgent inquiries, reach us via email.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm text-muted-foreground mb-1 block">Full Name *</label>
+                  <label className="text-sm text-muted mb-1 block">Full Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-10 rounded-md bg-muted border border-border px-3 text-sm text-foreground focus:border-accent focus:outline-none"
+                    className="w-full h-10 rounded-md bg-elevated border border-line px-3 text-sm text-foreground focus:border-accent focus:outline-none"
                     placeholder="John Smith"
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground mb-1 block">Email *</label>
+                  <label className="text-sm text-muted mb-1 block">Email *</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-10 rounded-md bg-muted border border-border px-3 text-sm text-foreground focus:border-accent focus:outline-none"
+                    className="w-full h-10 rounded-md bg-elevated border border-line px-3 text-sm text-foreground focus:border-accent focus:outline-none"
                     placeholder="john@company.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-sm text-muted-foreground mb-1 block">Subject *</label>
+                <label className="text-sm text-muted mb-1 block">Subject *</label>
                 <input
                   type="text"
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full h-10 rounded-md bg-muted border border-border px-3 text-sm text-foreground focus:border-accent focus:outline-none"
+                  className="w-full h-10 rounded-md bg-elevated border border-line px-3 text-sm text-foreground focus:border-accent focus:outline-none"
                   placeholder="Bulk order inquiry"
                 />
               </div>
 
               <div>
-                <label className="text-sm text-muted-foreground mb-1 block">Message *</label>
+                <label className="text-sm text-muted mb-1 block">Message *</label>
                 <textarea
                   required
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full rounded-md bg-muted border border-border px-3 py-2 text-sm text-foreground focus:border-accent focus:outline-none resize-none"
+                  className="w-full rounded-md bg-elevated border border-line px-3 py-2 text-sm text-foreground focus:border-accent focus:outline-none resize-none"
                   placeholder="Tell us about your requirements, quantities needed, target pricing, etc."
                 />
               </div>

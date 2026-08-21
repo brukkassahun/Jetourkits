@@ -36,10 +36,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
         transparent
-          ? "border-b border-transparent bg-white/55 backdrop-blur-md"
-          : "border-b border-line bg-panel/95 backdrop-blur-md"
+          ? "border-transparent bg-panel md:bg-white/55 md:backdrop-blur-md"
+          : "border-line bg-panel/95 backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
