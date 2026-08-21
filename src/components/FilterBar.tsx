@@ -118,7 +118,6 @@ export default function FilterBar({ resultCount }: { resultCount: number }) {
           <option value="featured">Featured first</option>
           <option value="price-asc">Price: low → high</option>
           <option value="price-desc">Price: high → low</option>
-          <option value="rating">Top rated</option>
         </select>
         <div className="flex items-center justify-end">
           {hasAny && (

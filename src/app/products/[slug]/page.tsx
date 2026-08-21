@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, Star, Wrench, Package, Layers } from "lucide-react";
+import { Check, Wrench, Package, Layers } from "lucide-react";
 import { compatTag, products } from "@/lib/products";
 import { getProductBySlug, queryProducts } from "@/lib/products-db";
-import { whatsappLink } from "@/lib/site";
+import { whatsappLink, site } from "@/lib/site";
 import ProductGallery from "@/components/ProductGallery";
 import AddToCartPanel from "@/components/AddToCartPanel";
 import ProductCard from "@/components/ProductCard";
@@ -36,7 +36,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
   if (!p) notFound();
 
   const related = (await queryProducts({ brand: p.brand })).filter((x) => x.slug !== p.slug).slice(0, 3);
-  const enquiry = `Hello MECHAKIT! I'm interested in the ${p.brand} ${p.model} ${p.name} ($${p.price}). My vehicle is a ${p.yearFrom}–${p.yearTo} ${p.brand} ${p.model}. Please confirm fitment and shipping to: `;
+  const enquiry = `Hello ${site.name}! I'm interested in the ${p.brand} ${p.model} ${p.name} ($${p.price}). My vehicle is a ${p.yearFrom}–${p.yearTo} ${p.brand} ${p.model}. Please confirm fitment and shipping to: `;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
@@ -74,17 +74,6 @@ export default async function ProductPage({ params }: { params: { slug: string }
           </h1>
 
           <div className="mt-2 flex items-center gap-2 text-sm text-muted">
-            <span className="flex items-center gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-4 w-4 ${i < Math.round(p.rating) ? "fill-accent text-accent" : "text-line"}`}
-                />
-              ))}
-            </span>
-            <span className="font-sans font-bold">{p.rating}</span>
-            <span className="text-faint">({p.reviews} reviews)</span>
-            <span className="text-faint">·</span>
             <span className={p.stock <= 5 ? "font-semibold text-flare" : "text-success"}>
               {p.stock <= 5 ? `Only ${p.stock} left` : "In stock"}
             </span>

@@ -47,10 +47,6 @@ export const revalidate = 60;
 export default async function HomePage() {
   const products = await listProducts();
   const featured = products.filter((p) => p.featured).slice(0, 4);
-  const topRated = products
-    .filter((p) => !p.featured)
-    .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews)
-    .slice(0, 3);
 
   const models = [
     {
@@ -206,28 +202,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 05 — Top rated */}
-      {topRated.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
-          <Reveal>
-            <SectionHead
-              index="05"
-              eyebrow="Top Rated"
-              title="Customer favorites"
-              sub="Highest-rated kits across the catalog."
-            />
-          </Reveal>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {topRated.map((p, i) => (
-              <Reveal key={p.id} delay={i * 100}>
-                <ProductCard product={p} />
-              </Reveal>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* 06 — B2B / wholesale */}
+      {/* 05 — B2B / wholesale */}
       <section className="px-4 pb-24 sm:px-6">
         <Reveal>
           <div className="shine relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-accent px-6 py-16 text-center sm:p-20">

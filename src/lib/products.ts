@@ -543,7 +543,7 @@ export interface ProductFilters {
   style?: string;
   kitType?: string;
   q?: string;
-  sort?: "featured" | "price-asc" | "price-desc" | "rating";
+  sort?: "featured" | "price-asc" | "price-desc";
 }
 
 export function filterProducts(f: ProductFilters, list: Product[] = products): Product[] {
@@ -567,11 +567,8 @@ export function filterProducts(f: ProductFilters, list: Product[] = products): P
     case "price-desc":
       out.sort((a, b) => b.price - a.price);
       break;
-    case "rating":
-      out.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
-      break;
     default:
-      out.sort((a, b) => Number(b.featured ?? false) - Number(a.featured ?? false) || b.rating - a.rating);
+      out.sort((a, b) => Number(b.featured ?? false) - Number(a.featured ?? false));
   }
   return out;
 }

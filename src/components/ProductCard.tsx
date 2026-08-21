@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, Plus, Star } from "lucide-react";
+import { Eye, Plus } from "lucide-react";
 import { compatTag, type Product } from "@/lib/products";
 import { useCart } from "./CartProvider";
 import { useCurrency } from "./CurrencyProvider";
@@ -64,10 +64,6 @@ export default function ProductCard({ product: p }: { product: Product }) {
         <div className="flex items-center justify-between gap-2">
           <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-faint">
             {p.brand} {p.model}
-          </span>
-          <span className="flex items-center gap-1 text-xs text-muted">
-            <Star className="h-3.5 w-3.5 fill-accent text-accent" strokeWidth={1} />
-            {p.rating} <span className="text-faint">({p.reviews})</span>
           </span>
         </div>
 
