@@ -47,7 +47,7 @@ export default function WholesalePage() {
             Wholesale & Custom Orders
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">
-            We manufacture in Guangzhou and supply resellers, workshops and fleet builders across
+            We manufacture in China and supply resellers, workshops and fleet builders across
             Africa, the Gulf and Southeast Asia. Mix brands and models freely — pricing follows total
             volume.
           </p>

@@ -123,7 +123,7 @@ export default function Hero() {
           </h1>
           <p className="hero-fade mx-auto mt-8 max-w-xl text-base leading-[1.8] text-ink/70 sm:text-lg">
             Factory-direct armor, mecha and aero kits for Jetour T1, T2 and G700. Engineered to OEM fit.
-            From full expedition builds to plug-and-play aero — shipped worldwide from Guangzhou.
+            From full expedition builds to plug-and-play aero — shipped worldwide from China.
           </p>
 
           <div className="hero-fade mt-10 flex flex-wrap items-center justify-center gap-4">

@@ -2,32 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Star, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { compatTag, type Product } from "@/lib/products";
 import { useCart } from "./CartProvider";
 import { useCurrency } from "./CurrencyProvider";
-
-function StarRating({ rating, reviews }: { rating: number; reviews: number }) {
-  return (
-    <div className="flex items-center gap-1.5">
-      <div className="flex items-center">
-        {Array.from({ length: 5 }).map((_, i) => {
-          const filled = i < Math.round(rating);
-          return (
-            <Star
-              key={i}
-              className={`h-3 w-3 ${filled ? "fill-accent text-accent" : "text-line"}`}
-              strokeWidth={1.5}
-            />
-          );
-        })}
-      </div>
-      <span className="text-[11px] text-muted">
-        {rating.toFixed(1)} ({reviews})
-      </span>
-    </div>
-  );
-}
 
 export default function ProductCard({ product: p }: { product: Product }) {
   const { add } = useCart();
@@ -79,10 +57,6 @@ export default function ProductCard({ product: p }: { product: Product }) {
             {p.name}
           </h3>
         </Link>
-
-        <div className="mt-2">
-          <StarRating rating={p.rating} reviews={p.reviews} />
-        </div>
 
         <p className="mt-2 text-[11px] text-muted">{compatTag(p)}</p>
 

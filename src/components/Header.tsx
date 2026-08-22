@@ -11,20 +11,8 @@ import Logo from "./Logo";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { count, setOpen: setCartOpen } = useCart();
-
-  // Pages with a dark cinematic hero get a transparent header that morphs on scroll
-  const isHome = pathname === "/";
-  const transparent = isHome && !scrolled && !open;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -37,20 +25,19 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
-          transparent ? "border-transparent bg-cream/80 backdrop-blur-md" : "border-line bg-cream/95 backdrop-blur-md"
-        }`}
-      >
+      <header className="fixed inset-x-0 top-0 z-[100] border-b border-line bg-cream/95 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-          <Logo variant="dark" />
+          <div className="shrink-0">
+            <Logo variant="dark" />
+          </div>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          {/* Desktop nav — show on lg+; fold/big-tablet gets hamburger */}
+          <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`font-sans text-[11px] font-bold uppercase tracking-[0.22em] transition-colors hover:text-accent ${
+                className={`font-sans text-[10px] font-bold uppercase tracking-[0.18em] transition-colors hover:text-accent xl:text-[11px] xl:tracking-[0.22em] ${
                   pathname === l.href ? "text-accent" : "text-ink"
                 }`}
               >
@@ -59,7 +46,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => setCartOpen(true)}
               className="relative flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink"
@@ -80,7 +67,7 @@ export default function Header() {
             </Link>
             <button
               onClick={() => setOpen(!open)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink lg:hidden"
               aria-label="Toggle menu"
               aria-expanded={open}
             >
@@ -90,9 +77,9 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile menu */}
+      {/* Mobile / fold menu */}
       <div
-        className={`fixed inset-x-0 bottom-0 top-16 z-40 bg-cream transition-all duration-300 md:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-16 z-[90] bg-cream transition-all duration-300 lg:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
@@ -101,7 +88,7 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className={`border-b border-line px-2 py-4 font-sans text-sm font-bold uppercase tracking-[0.2em] transition-all ${
+              className={`border-b border-line px-2 py-4 font-sans text-sm font-black uppercase tracking-[0.2em] transition-all ${
                 open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
               } ${pathname === l.href ? "text-accent" : "text-ink"}`}
               style={{ transitionDelay: `${i * 40}ms` }}

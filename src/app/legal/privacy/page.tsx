@@ -194,7 +194,7 @@ export default function PrivacyPolicyPage() {
                   </a>
                 </p>
                 <p>
-                  <strong className="text-ink">Address:</strong> China,Guangzhou
+                  <strong className="text-ink">Address:</strong> China,China
                 </p>
                 <p>
                   <strong className="text-ink">Phone:</strong>{" "}

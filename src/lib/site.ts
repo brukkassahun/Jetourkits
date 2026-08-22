@@ -7,7 +7,7 @@ export const site = {
   whatsapp: "8613800000000",
   wechat: "JETOURKITS",
   email: "contact@jetourt2parts.com",
-  address: "China,Guangzhou",
+  address: "China,China",
 };
 
 export const navLinks = [
@@ -26,7 +26,7 @@ export function whatsappLink(message: string) {
 export const trustBadges = [
   { icon: "globe", title: "Global Express Shipping", sub: "DHL / sea freight to 40+ countries" },
   { icon: "shield", title: "OEM-Fit Guarantee", sub: "Bolt-on fitment or full refund" },
-  { icon: "factory", title: "Direct Factory Sourcing", sub: "No middlemen — Guangzhou plant" },
+  { icon: "factory", title: "Direct Factory Sourcing", sub: "No middlemen — China plant" },
 ];
 
 export const brandLines = [

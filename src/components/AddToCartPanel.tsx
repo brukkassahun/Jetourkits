@@ -18,7 +18,7 @@ export default function AddToCartPanel({ slug, price, originalPrice }: { slug: s
           <p className="pb-1 text-sm text-faint line-through">{format(originalPrice)}</p>
         )}
       </div>
-      <p className="mt-1 text-xs text-faint">EXW Guangzhou · freight quoted per destination</p>
+      <p className="mt-1 text-xs text-faint">EXW China · freight quoted per destination</p>
 
       <div className="mt-5 flex items-center gap-3">
         <div className="flex items-center rounded-full border border-line bg-cream">

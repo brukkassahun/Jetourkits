@@ -18,7 +18,7 @@ const stats = [
 const collage = [
   {
     title: "The Network",
-    desc: "ISO 9001 & IATF 16949 certified partners across Guangzhou.",
+    desc: "ISO 9001 & IATF 16949 certified partners across China.",
     image: "/images/oem-fit.webp",
   },
   {
