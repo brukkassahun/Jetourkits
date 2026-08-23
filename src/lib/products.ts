@@ -12,7 +12,9 @@ export type KitType =
   | "Grille"
   | "Snorkel"
   | "Light Bar"
-  | "Hood";
+  | "Hood"
+  | "Cargo Box"
+  | "Accessory";
 
 export type InstallRating = "Plug & Play" | "Bolt-On" | "Professional Install";
 
