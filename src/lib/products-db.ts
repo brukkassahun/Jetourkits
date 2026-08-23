@@ -29,8 +29,6 @@ function rowToProduct(r: any): Product {
     components: r.components ?? [],
     description: r.description ?? "",
     stock: r.stock ?? 0,
-    rating: Number(r.rating ?? 5),
-    reviews: r.reviews ?? 0,
     featured: r.featured ?? false,
     hotDeal: r.hot_deal ?? false,
   };

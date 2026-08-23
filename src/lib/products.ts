@@ -34,8 +34,6 @@ export interface Product {
   components: string[];
   description: string;
   stock: number;
-  rating: number;
-  reviews: number;
   featured?: boolean;
   hotDeal?: boolean;
 }
@@ -77,8 +75,6 @@ export const products: Product[] = [
     description:
       "The flagship Mars Explorer conversion turns the Jetour T2 into a true expedition rig. Every panel is CAD-matched to factory mounting points — no cutting or welding required. Powder-coated in matte black with optional color-match service for bulk orders.",
     stock: 8,
-    rating: 4.9,
-    reviews: 47,
     featured: true,
     hotDeal: true,
   },
@@ -110,8 +106,6 @@ export const products: Product[] = [
     description:
       "The Stargazer kit sharpens the T2's street presence without sacrificing daily drivability. Flexible PP construction survives speed bumps and curb taps that crack fiberglass kits. Ships primered, ready for paint.",
     stock: 15,
-    rating: 4.8,
-    reviews: 89,
     featured: true,
   },
   {
@@ -140,8 +134,6 @@ export const products: Product[] = [
     description:
       "The traveller-style LED tail wing — sequential turn signal and brake light built into an aggressive mecha-profile spoiler. Connects to the factory harness with our adapter: truly plug & play.",
     stock: 26,
-    rating: 4.8,
-    reviews: 65,
     featured: true,
   },
   {
@@ -172,8 +164,6 @@ export const products: Product[] = [
     description:
       "Raises the T2's intake to roofline for water crossings and dusty trails. Ram head rotates 180° for heavy rain. Includes a precision cutting template — one careful cut, everything else bolts on.",
     stock: 14,
-    rating: 4.7,
-    reviews: 29,
   },
   {
     id: "j2-05",
@@ -204,8 +194,6 @@ export const products: Product[] = [
     description:
       "Aggressive geometric styling inspired by exoskeleton armor. The Ironclad keeps full compatibility with the T2's parking sensors and front camera, and its steel skid plate protects the sump on rough tracks.",
     stock: 12,
-    rating: 4.7,
-    reviews: 34,
     featured: true,
     hotDeal: true,
   },
@@ -236,8 +224,6 @@ export const products: Product[] = [
     description:
       "Real sliders, not decorative side bars — chassis-mounted to take the T2's full weight on a jack or a rock. Stepped top surface doubles as a door sill step for roof access.",
     stock: 19,
-    rating: 4.8,
-    reviews: 41,
   },
   {
     id: "j2-07",
@@ -267,8 +253,6 @@ export const products: Product[] = [
     description:
       "Flat-pack expedition platform sized for rooftop tents and jerry can mounts. T-slot channels accept standard accessories. Light bar is IP68 rated with a 2-year warranty.",
     stock: 22,
-    rating: 4.8,
-    reviews: 61,
   },
 
   // ─── T1 / Traveller Products ──────────────────────────────────────────────
@@ -301,8 +285,6 @@ export const products: Product[] = [
     description:
       "Aggressive geometric styling inspired by exoskeleton armor. The Ironclad keeps full compatibility with the Traveller's parking sensors and front camera, and its steel skid plate protects the sump on rough tracks.",
     stock: 12,
-    rating: 4.7,
-    reviews: 34,
     featured: true,
     hotDeal: true,
   },
@@ -333,8 +315,6 @@ export const products: Product[] = [
     description:
       "Textured matte-black pocket flares that cover wider all-terrain rubber and protect paint from stone chips. Flexible ABS won't crack in cold climates.",
     stock: 30,
-    rating: 4.7,
-    reviews: 78,
   },
   {
     id: "j1-03",
@@ -364,8 +344,6 @@ export const products: Product[] = [
     description:
       "Flat-pack expedition platform sized for rooftop tents and jerry can mounts. T-slot channels accept standard accessories. Light bar is IP68 rated with a 2-year warranty.",
     stock: 18,
-    rating: 4.8,
-    reviews: 55,
   },
 
   // ─── G700 Products ────────────────────────────────────────────────────────
@@ -401,8 +379,6 @@ export const products: Product[] = [
     description:
       "The flagship Mars Explorer conversion for the G700 — engineered for serious expedition duty. Every panel is CAD-matched to factory mounting points on the G700 chassis. Powder-coated in matte black with optional color-match service.",
     stock: 6,
-    rating: 4.9,
-    reviews: 18,
     featured: true,
     hotDeal: true,
   },
@@ -435,8 +411,6 @@ export const products: Product[] = [
     description:
       "Aggressive geometric styling for the G700 — exoskeleton-inspired armor. Keeps full compatibility with G700 parking sensors and front camera. Steel skid plate protects the sump on rough terrain.",
     stock: 10,
-    rating: 4.8,
-    reviews: 22,
     featured: true,
   },
   {
@@ -466,8 +440,6 @@ export const products: Product[] = [
     description:
       "Heavy-duty sliders designed for the G700's higher weight and capability. Chassis-mounted to take full G700 weight on a jack or a rock. Stepped top surface doubles as a door sill step for roof access.",
     stock: 14,
-    rating: 4.9,
-    reviews: 28,
   },
   {
     id: "g7-04",
@@ -497,8 +469,6 @@ export const products: Product[] = [
     description:
       "The G700's larger roof and higher load rating demanded a heavier-duty platform. 160kg rated with T-slot channels for all standard accessories. Light bar is IP68 rated, 2-year warranty.",
     stock: 12,
-    rating: 4.9,
-    reviews: 35,
   },
   {
     id: "g7-05",
@@ -528,8 +498,6 @@ export const products: Product[] = [
     description:
       "Raises the G700's intake to roofline for deep water crossings and dusty trails. Ram head rotates 180° for heavy rain conditions. Precision cutting template included — one careful cut, everything else bolts on.",
     stock: 8,
-    rating: 4.7,
-    reviews: 19,
   },
 ];
 
