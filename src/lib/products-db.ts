@@ -78,3 +78,24 @@ export async function queryProducts(f: ProductFilters): Promise<Product[]> {
   const all = await listProducts();
   return localFilter(f, all);
 }
+
+/** Paginated filtered query. */
+export async function queryProductsPaginated(
+  f: ProductFilters,
+  page: number,
+  perPage: number
+): Promise<{ products: Product[]; total: number; page: number; perPage: number; totalPages: number }> {
+  const all = await queryProducts(f);
+  const total = all.length;
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
+  const safePage = Math.min(Math.max(1, page), totalPages);
+  const start = (safePage - 1) * perPage;
+  const products = all.slice(start, start + perPage);
+  return { products, total, page: safePage, perPage, totalPages };
+}
+
+/** Hot deals for the products page hero. */
+export async function listHotDeals(limit = 6): Promise<Product[]> {
+  const all = await listProducts();
+  return all.filter((p) => p.hotDeal).slice(0, limit);
+}

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
-import { queryProducts } from "@/lib/products-db";
+import { queryProductsPaginated, listHotDeals } from "@/lib/products-db";
 import type { ProductFilters } from "@/lib/products";
 import { whatsappLink } from "@/lib/site";
 import ProductCard from "@/components/ProductCard";
 import FilterBar from "@/components/FilterBar";
+import Pagination from "@/components/Pagination";
 
 export const metadata: Metadata = {
   title: "All Body Kits",
@@ -43,10 +44,26 @@ export default async function ProductsPage({
     kitType: str(searchParams.kitType) || undefined,
     sort: (str(searchParams.sort) as ProductFilters["sort"]) || "featured",
   };
-  const results = await queryProducts(filters);
+  const rawPage = parseInt(str(searchParams.page) || "1", 10);
+  const page = isNaN(rawPage) ? 1 : rawPage;
+  const perPage = 24;
+
+  const [{ products, total, totalPages }, hotDeals] = await Promise.all([
+    queryProductsPaginated(filters, page, perPage),
+    listHotDeals(6),
+  ]);
 
   const isFiltering = filters.q || filters.model || filters.style || filters.kitType || filters.sort !== "featured";
-  const hotDeals = results.filter((p) => p.hotDeal).slice(0, 6);
+
+  // Build base URL for pagination, preserving filters
+  const params = new URLSearchParams();
+  if (filters.q) params.set("q", filters.q);
+  if (filters.brand) params.set("brand", filters.brand);
+  if (filters.model) params.set("model", filters.model);
+  if (filters.style) params.set("style", filters.style);
+  if (filters.kitType) params.set("kitType", filters.kitType);
+  if (filters.sort && filters.sort !== "featured") params.set("sort", filters.sort);
+  const baseUrl = `/products${params.toString() ? `?${params.toString()}` : ""}`;
 
   return (
     <div className="min-h-screen bg-cream">
@@ -117,14 +134,20 @@ export default async function ProductsPage({
             {isFiltering ? "Results" : "All kits"}
           </h2>
           <p className="text-sm text-muted">
-            <span className="font-semibold text-ink">{results.length}</span>{" "}
-            {results.length === 1 ? "kit" : "kits"}
+            <span className="font-semibold text-ink">{total}</span>{" "}
+            {total === 1 ? "kit" : "kits"}
+            {totalPages > 1 && (
+              <>
+                {" "}
+                — page <span className="font-semibold text-ink">{page}</span>/{totalPages}
+              </>
+            )}
           </p>
         </div>
 
-        {results.length > 0 ? (
+        {products.length > 0 ? (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {results.map((p) => (
+            {products.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
@@ -150,6 +173,8 @@ export default async function ProductsPage({
             </div>
           </div>
         )}
+
+        <Pagination page={page} totalPages={totalPages} baseUrl={baseUrl} />
       </section>
     </div>
   );
