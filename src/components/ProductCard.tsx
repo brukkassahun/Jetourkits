@@ -16,8 +16,6 @@ export default function ProductCard({ product: p }: { product: Product }) {
       ? Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100)
       : 0;
 
-  const installment = p.price / 4;
-
   return (
     <div className="group card-coda flex flex-col">
       {/* Image */}
@@ -67,8 +65,8 @@ export default function ProductCard({ product: p }: { product: Product }) {
               <p className="text-xs text-faint line-through">{format(p.originalPrice)}</p>
             )}
           </div>
-          <p className="mt-1 text-[11px] text-muted">
-            or 4 payments of <span className="font-semibold text-ink">{format(installment)}</span>
+          <p className="mt-1 text-[11px] font-medium text-success">
+            Discount available for quantity orders
           </p>
 
           <button
