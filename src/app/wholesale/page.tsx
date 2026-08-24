@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Boxes, Globe2, Palette, Ship, CheckCircle2, MessageCircle, QrCode, Phone } from "lucide-react";
+import { Boxes, Globe2, Palette, Ship, CheckCircle2, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import { site, whatsappLink } from "@/lib/site";
 
