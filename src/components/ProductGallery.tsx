@@ -5,12 +5,13 @@ import Image from "next/image";
 
 export default function ProductGallery({ images, name }: { images: string[]; name: string }) {
   const [active, setActive] = useState(0);
+  const safeImages = images.length > 0 ? images : ["/images/placeholder-product.webp"];
 
   return (
     <div>
       <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-paper">
         <Image
-          src={images[active]}
+          src={safeImages[active]}
           alt={`${name} — view ${active + 1}`}
           fill
           priority
@@ -18,12 +19,12 @@ export default function ProductGallery({ images, name }: { images: string[]; nam
           className="object-cover"
         />
         <span className="absolute bottom-3 right-3 rounded-full bg-ink/80 px-3 py-1 font-sans text-[11px] font-bold uppercase tracking-wider text-cream backdrop-blur">
-          {active + 1} / {images.length}
+          {active + 1} / {safeImages.length}
         </span>
       </div>
-      {images.length > 1 && (
+      {safeImages.length > 1 && (
         <div className="mt-3 grid grid-cols-4 gap-2.5">
-          {images.map((src, i) => (
+          {safeImages.map((src, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
