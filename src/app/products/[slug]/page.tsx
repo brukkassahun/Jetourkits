@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
         <div className="grid gap-10 lg:grid-cols-2">
           {/* Gallery */}
-          <ProductGallery images={p.images} name={p.name} />
+          <ProductGallery images={p.images} thumbnail={p.thumbnail} name={p.name} />
 
           {/* Info */}
           <div>

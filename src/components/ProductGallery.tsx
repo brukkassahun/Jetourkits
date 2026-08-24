@@ -3,9 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function ProductGallery({ images, name }: { images: string[]; name: string }) {
+export default function ProductGallery({ images, thumbnail, name }: { images: string[]; thumbnail?: string; name: string }) {
   const [active, setActive] = useState(0);
-  const safeImages = images.length > 0 ? images : ["/images/placeholder-product.webp"];
+  const safeImages =
+    images.length > 0
+      ? images
+      : thumbnail
+        ? [thumbnail]
+        : ["/images/placeholder-product.webp"];
 
   return (
     <div>

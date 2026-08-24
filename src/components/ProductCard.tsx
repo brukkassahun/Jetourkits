@@ -21,7 +21,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
       {/* Image */}
       <Link href={`/products/${p.slug}`} className="relative block aspect-[4/3] overflow-hidden rounded-t-3xl bg-paper">
         <Image
-          src={p.images[0] || "/images/placeholder-product.webp"}
+          src={p.thumbnail || p.images[0] || "/images/placeholder-product.webp"}
           alt={p.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

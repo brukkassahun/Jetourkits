@@ -30,6 +30,7 @@ export interface Product {
   kitType: KitType;
   price: number; // USD
   originalPrice?: number;
+  thumbnail?: string;
   images: string[];
   materials: string[];
   install: InstallRating;
