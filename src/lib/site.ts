@@ -3,8 +3,8 @@ export const site = {
   tagline: "Premium Aftermarket Parts for Jetour T2",
   description:
     "Premium wholesale aftermarket parts for the Jetour T2. Sourced through our network of ISO 9001 & IATF 16949 certified manufacturing partners.",
-  phone: "+86 138 0000 0000",
-  whatsapp: "8613800000000",
+  phone: "+86 153 6580 6070",
+  whatsapp: "8615365806070",
   wechat: "JETOURKITS",
   email: "contact@jetourt2parts.com",
   address: "China,China",
