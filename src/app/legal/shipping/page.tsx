@@ -214,18 +214,24 @@ export default function ShippingPolicyPage() {
               <div className="bg-elevated rounded-lg p-4 text-muted">
                 <p>
                   <strong className="text-ink">Email:</strong>{" "}
-                  <a href="mailto:shipping@jetourt2parts.com" className="text-accent hover:underline">
-                    shipping@jetourt2parts.com
+                  <a href={`mailto:${site.email}`} className="text-accent hover:underline">
+                    {site.email}
                   </a>
                 </p>
                 <p>
                   <strong className="text-ink">Phone:</strong>{" "}
-                  <a href="tel:+8613380262534" className="text-accent hover:underline">
-                    +86 133 8026 2534
+                  <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="text-accent hover:underline">
+                    {site.phone}
                   </a>
                 </p>
                 <p>
-                  <strong className="text-ink">Address:</strong> China,China
+                  <strong className="text-ink">WhatsApp:</strong>{" "}
+                  <a href={`https://wa.me/${site.whatsapp}`} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                    {site.phone}
+                  </a>
+                </p>
+                <p>
+                  <strong className="text-ink">Address:</strong> {site.address}
                 </p>
               </div>
             </div>

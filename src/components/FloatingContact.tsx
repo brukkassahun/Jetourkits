@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MessageCircle, X, QrCode } from "lucide-react";
+import { MessageCircle, X, QrCode, Phone } from "lucide-react";
+import Image from "next/image";
 import { site, whatsappLink } from "@/lib/site";
 
 export default function FloatingContact() {
@@ -53,14 +54,26 @@ export default function FloatingContact() {
             className="w-full max-w-xs rounded-3xl border border-line bg-cream p-6 text-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-2xl border border-dashed border-line bg-paper">
-              <QrCode className="h-16 w-16 text-faint" />
-            </div>
+            {site.wechatQr ? (
+              <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-2xl border border-line bg-paper">
+                <Image src={site.wechatQr} alt="WeChat QR code" fill className="object-contain p-2" />
+              </div>
+            ) : (
+              <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-2xl border border-dashed border-line bg-paper">
+                <QrCode className="h-16 w-16 text-faint" />
+              </div>
+            )}
             <p className="mt-4 font-sans text-sm font-black uppercase tracking-[0.14em] text-ink">WeChat Customer Service</p>
             <p className="mt-1 select-all rounded-2xl bg-paper px-3 py-2 font-mono text-sm text-accent">
               {site.wechat}
             </p>
-            <p className="mt-2 text-xs text-faint">Scan the QR in-store or add our ID directly.</p>
+            <a
+              href={`tel:${site.phone.replace(/\s/g, "")}`}
+              className="mt-3 flex items-center justify-center gap-2 rounded-2xl bg-paper px-3 py-2 font-mono text-sm text-accent"
+            >
+              <Phone className="h-4 w-4" /> {site.phone}
+            </a>
+            <p className="mt-2 text-xs text-faint">Scan the QR code or call us directly.</p>
             <button
               onClick={() => setWechatOpen(false)}
               className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-line bg-paper px-4 py-2.5 font-sans text-sm font-bold uppercase tracking-wider text-muted transition-colors hover:border-ink hover:text-ink"

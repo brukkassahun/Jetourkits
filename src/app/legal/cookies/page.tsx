@@ -174,8 +174,8 @@ export default function CookiePolicyPage() {
               <h2 className="text-xl font-display font-bold text-ink mt-8 mb-4">Contact</h2>
               <p className="text-muted leading-relaxed">
                 If you have any questions about our use of cookies, please contact us at{" "}
-                <a href="mailto:privacy@jetourt2parts.com" className="text-accent hover:underline">
-                  privacy@jetourt2parts.com
+                <a href={`mailto:${site.email}`} className="text-accent hover:underline">
+                  {site.email}
                 </a>
                 .
               </p>

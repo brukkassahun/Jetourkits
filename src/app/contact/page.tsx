@@ -32,20 +32,20 @@ export default function ContactPage() {
     },
     {
       icon: Phone,
-      label: "Phone",
-      value: "+XXX-XXX-XXXX",
-      href: null,
+      label: "Phone / WhatsApp",
+      value: site.phone,
+      href: `https://wa.me/${site.whatsapp}`,
     },
     {
       icon: MapPin,
       label: "Office",
-      value: "Global operations with regional logistics hubs",
+      value: site.address,
       href: null,
     },
     {
       icon: Clock,
       label: "Business Hours",
-      value: "Mon–Sat: 9:00 AM–6:00 PM (Multiple time zones)",
+      value: "Mon–Sat: 9:00 AM–6:00 PM (China time)",
       href: null,
     },
   ];

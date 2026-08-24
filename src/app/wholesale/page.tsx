@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Boxes, Globe2, Palette, Ship, CheckCircle2, MessageCircle, QrCode } from "lucide-react";
+import { Boxes, Globe2, Palette, Ship, CheckCircle2, MessageCircle, QrCode, Phone } from "lucide-react";
+import Image from "next/image";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -127,7 +128,7 @@ export default function WholesalePage() {
             Get your quote in 24 hours
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-white/70">
-            Send your list on WhatsApp — include models, quantities and destination port. We reply
+            Send your list on WhatsApp or WeChat — include models, quantities and destination port. We reply
             with per-unit pricing, packing dimensions and freight options.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -139,10 +140,23 @@ export default function WholesalePage() {
             >
               <MessageCircle className="h-4 w-4" /> WhatsApp Sales
             </a>
-            <span className="flex items-center gap-2 rounded-full border border-white/20 px-5 py-3.5 font-sans text-sm font-bold uppercase tracking-wider text-cream">
-              <QrCode className="h-5 w-5 text-accent" /> WeChat: {site.wechat}
-            </span>
+            <a
+              href={`tel:${site.phone.replace(/\s/g, "")}`}
+              className="flex items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3.5 font-sans text-sm font-bold uppercase tracking-wider text-cream transition-colors hover:border-white/40"
+            >
+              <Phone className="h-4 w-4 text-accent" /> {site.phone}
+            </a>
           </div>
+          {site.wechatQr && (
+            <div className="mt-8 flex flex-col items-center">
+              <div className="relative h-40 w-40 overflow-hidden rounded-2xl bg-white p-2">
+                <Image src={site.wechatQr} alt="WeChat QR code" fill className="object-contain p-1" />
+              </div>
+              <p className="mt-2 font-sans text-xs font-bold uppercase tracking-wider text-white/70">
+                Scan WeChat: {site.wechat}
+              </p>
+            </div>
+          )}
         </section>
       </div>
     </div>

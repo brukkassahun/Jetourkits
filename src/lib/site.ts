@@ -6,7 +6,8 @@ export const site = {
   phone: "+86 153 6580 6070",
   whatsapp: "8615365806070",
   wechat: "JETOURKITS",
-  email: "contact@jetourt2parts.com",
+  wechatQr: "/images/wechat-qr-code.webp",
+  email: "contact@jetourkits.com",
   address: "China,China",
 };
 
