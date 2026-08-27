@@ -5,12 +5,14 @@ import Image from "next/image";
 
 export default function ProductGallery({ images, thumbnail, name }: { images: string[]; thumbnail?: string; name: string }) {
   const [active, setActive] = useState(0);
+
+  // Build gallery: thumbnail first (if exists and not already in images), then images
+  const galleryImages = thumbnail && !images.includes(thumbnail) ? [thumbnail, ...images] : images;
+
   const safeImages =
-    images.length > 0
-      ? images
-      : thumbnail
-        ? [thumbnail]
-        : ["/images/placeholder-product.webp"];
+    galleryImages.length > 0
+      ? galleryImages
+      : ["/images/placeholder-product.webp"];
 
   return (
     <div>
@@ -21,7 +23,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover"
+          className="object-contain p-4"
         />
         <span className="absolute bottom-3 right-3 rounded-full bg-ink/80 px-3 py-1 font-sans text-[11px] font-bold uppercase tracking-wider text-cream backdrop-blur">
           {active + 1} / {safeImages.length}
@@ -38,7 +40,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
                 i === active ? "border-ink" : "border-line hover:border-ink/50"
               }`}
             >
-              <Image src={src} alt="" fill sizes="120px" className="object-cover" />
+              <Image src={src} alt="" fill sizes="120px" className="object-contain p-1" />
             </button>
           ))}
         </div>
