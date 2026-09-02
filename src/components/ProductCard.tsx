@@ -17,9 +17,9 @@ export default function ProductCard({ product: p }: { product: Product }) {
       : 0;
 
   return (
-    <div className="group card-coda flex flex-col">
+    <Link href={`/products/${p.slug}`} className="group card-coda flex flex-col cursor-pointer">
       {/* Image */}
-      <Link href={`/products/${p.slug}`} className="relative block aspect-[4/3] overflow-hidden rounded-t-3xl bg-paper">
+      <div className="relative block aspect-[4/3] overflow-hidden rounded-t-3xl bg-paper">
         <Image
           src={p.thumbnail || p.images[0] || "/images/placeholder-product.webp"}
           alt={p.name}
@@ -37,7 +37,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
             Deal
           </span>
         )}
-      </Link>
+      </div>
 
       {/* Body */}
       <div className="flex flex-1 flex-col p-4">
@@ -50,11 +50,9 @@ export default function ProductCard({ product: p }: { product: Product }) {
           </span>
         </div>
 
-        <Link href={`/products/${p.slug}`} className="mt-2 block">
-          <h3 className="line-clamp-2 font-sans text-[15px] font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
-            {p.name}
-          </h3>
-        </Link>
+        <h3 className="mt-2 line-clamp-2 font-sans text-[15px] font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
+          {p.name}
+        </h3>
 
         <p className="mt-2 text-[11px] text-muted">{compatTag(p)}</p>
 
@@ -70,7 +68,11 @@ export default function ProductCard({ product: p }: { product: Product }) {
           </p>
 
           <button
-            onClick={() => add(p.slug)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              add(p.slug);
+            }}
             className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-ink py-2.5 font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-cream transition-all duration-300 hover:bg-accent"
             aria-label={`Add ${p.name} to cart`}
           >
@@ -79,6 +81,6 @@ export default function ProductCard({ product: p }: { product: Product }) {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
