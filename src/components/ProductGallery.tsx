@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
+import { ZoomIn } from "lucide-react";
 
 export default function ProductGallery({ images, thumbnail, name }: { images: string[]; thumbnail?: string; name: string }) {
   const [active, setActive] = useState(0);
+  const [zoom, setZoom] = useState(false);
+  const [lensPos, setLensPos] = useState({ x: 50, y: 50 });
+  const imgWrapRef = useRef<HTMLDivElement>(null);
 
   // Build gallery: thumbnail first (if exists and not already in images), then images
   const galleryImages = thumbnail && !images.includes(thumbnail) ? [thumbnail, ...images] : images;
@@ -14,21 +18,82 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
       ? galleryImages
       : ["/images/placeholder-product.webp"];
 
+  const handleMove = useCallback((e: React.MouseEvent) => {
+    const el = imgWrapRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setLensPos({ x: Math.max(0, Math.min(100, x)), y: Math.max(0, Math.min(100, y)) });
+  }, []);
+
+  const handleTouch = useCallback((e: React.TouchEvent) => {
+    const el = imgWrapRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = ((touch.clientX - rect.left) / rect.width) * 100;
+    const y = ((touch.clientY - rect.top) / rect.height) * 100;
+    setLensPos({ x: Math.max(0, Math.min(100, x)), y: Math.max(0, Math.min(100, y)) });
+  }, []);
+
   return (
     <div>
-      <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-paper">
+      {/* Main image with hover zoom + magnify button */}
+      <div
+        ref={imgWrapRef}
+        className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-paper"
+        onMouseEnter={() => setZoom(true)}
+        onMouseLeave={() => setZoom(false)}
+        onMouseMove={handleMove}
+        onTouchStart={(e) => { setZoom(true); handleTouch(e); }}
+        onTouchMove={handleTouch}
+        onTouchEnd={() => setZoom(false)}
+      >
+        {/* Base image */}
         <Image
           src={safeImages[active]}
           alt={`${name} — view ${active + 1}`}
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover"
+          className={`object-cover transition-opacity duration-200 ${zoom ? "opacity-0" : "opacity-100"}`}
         />
-        <span className="absolute bottom-3 right-3 rounded-full bg-ink/80 px-3 py-1 font-sans text-[11px] font-bold uppercase tracking-wider text-cream backdrop-blur">
+
+        {/* Zoomed image — uses background-image with transform-origin */}
+        {zoom && (
+          <div
+            className="absolute inset-0 bg-paper"
+            style={{
+              backgroundImage: `url(${safeImages[active]})`,
+              backgroundSize: "250%",
+              backgroundPosition: `${lensPos.x}% ${lensPos.y}%`,
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+        )}
+
+        {/* Lens crosshair indicator */}
+        {zoom && (
+          <div
+            className="pointer-events-none absolute h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white/70 shadow-lg"
+            style={{ left: `${lensPos.x}%`, top: `${lensPos.y}%` }}
+          />
+        )}
+
+        {/* Magnify hint badge */}
+        <div className="pointer-events-none absolute right-3 top-3 flex items-center gap-1 rounded-full bg-ink/70 px-2.5 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-cream backdrop-blur">
+          <ZoomIn className="h-3 w-3" strokeWidth={2.5} />
+          Hover to zoom
+        </div>
+
+        {/* Counter */}
+        <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/80 px-3 py-1 font-sans text-[11px] font-bold uppercase tracking-wider text-cream backdrop-blur">
           {active + 1} / {safeImages.length}
         </span>
       </div>
+
+      {/* Thumbnail strip */}
       {safeImages.length > 1 && (
         <div className="mt-3 grid grid-cols-4 gap-2.5">
           {safeImages.map((src, i) => (
