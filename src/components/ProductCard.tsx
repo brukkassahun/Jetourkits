@@ -19,7 +19,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
   return (
     <Link href={`/products/${p.slug}`} className="group card-coda flex flex-col cursor-pointer">
       {/* Image */}
-      <div className="relative block aspect-[4/3] overflow-hidden rounded-t-3xl bg-paper">
+      <div className="relative block aspect-square overflow-hidden rounded-t-3xl bg-paper">
         <Image
           src={p.thumbnail || p.images[0] || "/images/placeholder-product.webp"}
           alt={p.name}

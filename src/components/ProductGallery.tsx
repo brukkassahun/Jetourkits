@@ -42,7 +42,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
       {/* Main image with hover zoom + magnify button */}
       <div
         ref={imgWrapRef}
-        className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-paper"
+        className="relative aspect-square overflow-hidden rounded-3xl border border-line bg-paper"
         onMouseEnter={() => setZoom(true)}
         onMouseLeave={() => setZoom(false)}
         onMouseMove={handleMove}
@@ -101,7 +101,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
               key={i}
               onClick={() => setActive(i)}
               aria-label={`View image ${i + 1}`}
-              className={`relative aspect-[4/3] overflow-hidden rounded-2xl border bg-paper transition-colors ${
+              className={`relative aspect-square overflow-hidden rounded-2xl border bg-paper transition-colors ${
                 i === active ? "border-ink" : "border-line hover:border-ink/50"
               }`}
             >
