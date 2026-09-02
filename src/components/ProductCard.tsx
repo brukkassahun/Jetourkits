@@ -25,7 +25,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
           alt={p.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-contain"
         />
         {discount > 0 && (
           <span className="absolute left-3 top-3 rounded-full bg-ink px-2.5 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-cream">

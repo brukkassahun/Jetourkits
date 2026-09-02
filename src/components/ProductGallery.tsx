@@ -57,7 +57,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className={`object-cover transition-opacity duration-200 ${zoom ? "opacity-0" : "opacity-100"}`}
+          className={`object-contain transition-opacity duration-200 ${zoom ? "opacity-0" : "opacity-100"}`}
         />
 
         {/* Zoomed image — uses background-image with transform-origin */}
@@ -105,7 +105,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
                 i === active ? "border-ink" : "border-line hover:border-ink/50"
               }`}
             >
-              <Image src={src} alt="" fill sizes="120px" className="object-cover" />
+              <Image src={src} alt="" fill sizes="120px" className="object-contain" />
             </button>
           ))}
         </div>
