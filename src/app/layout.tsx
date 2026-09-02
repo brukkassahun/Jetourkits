@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import FloatingContact from "@/components/FloatingContact";
+import ImageProtection from "@/components/ImageProtection";
 import { CartProvider } from "@/components/CartProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Footer />
             <CartDrawer />
             <FloatingContact />
+            <ImageProtection />
           </CartProvider>
         </CurrencyProvider>
       </body>
