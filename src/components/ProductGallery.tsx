@@ -23,7 +23,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-contain p-4"
+          className="object-cover"
         />
         <span className="absolute bottom-3 right-3 rounded-full bg-ink/80 px-3 py-1 font-sans text-[11px] font-bold uppercase tracking-wider text-cream backdrop-blur">
           {active + 1} / {safeImages.length}
@@ -40,7 +40,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
                 i === active ? "border-ink" : "border-line hover:border-ink/50"
               }`}
             >
-              <Image src={src} alt="" fill sizes="120px" className="object-contain p-1" />
+              <Image src={src} alt="" fill sizes="120px" className="object-cover" />
             </button>
           ))}
         </div>
