@@ -69,7 +69,7 @@ export default async function ProductsPage({
     <div className="min-h-screen bg-cream">
       {/* Search hero */}
       <section className="border-b border-line bg-cream">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+        <div className="mx-auto max-w-[1440px] px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
           <div className="text-center">
             <p className="eyebrow">All Kits</p>
             <h1 className="display-lg mx-auto mt-5 max-w-3xl">
@@ -103,7 +103,7 @@ export default async function ProductsPage({
 
       {/* Hot deals */}
       {!isFiltering && hotDeals.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+        <section className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 sm:py-10">
           <div className="mb-5 flex items-end justify-between">
             <div>
               <p className="eyebrow">Limited Stock</p>
@@ -128,7 +128,7 @@ export default async function ProductsPage({
       )}
 
       {/* Main results */}
-      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+      <section className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 sm:py-10">
         <div className="mb-6 flex items-end justify-between border-b border-line pb-4">
           <h2 className="title">
             {isFiltering ? "Results" : "All kits"}

@@ -41,7 +41,7 @@ const steps = [
 export default function WholesalePage() {
   return (
     <div className="min-h-screen bg-cream">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-[1440px] px-4 py-10 sm:px-6 sm:py-14">
         <header className="max-w-3xl">
           <p className="eyebrow">B2B · Bulk · OEM/ODM</p>
           <h1 className="display-lg mt-5 text-3xl text-ink sm:text-5xl">

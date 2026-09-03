@@ -82,7 +82,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-cream">
       {/* Hero */}
       <section className="overflow-hidden border-b border-line bg-paper">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1440px] px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="order-2 lg:order-1">
               <p className="eyebrow">About Us</p>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who we are collage */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+      <section className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="eyebrow">Who We Are</p>
@@ -163,7 +163,7 @@ export default function AboutPage() {
 
       {/* Highlights */}
       <section className="border-y border-line bg-paper">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <p className="eyebrow">The Highlights</p>
           <h2 className="display-lg mt-5 max-w-2xl">
             The future of Jetour upgrades needs builders.
@@ -187,7 +187,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:py-20">
+      <section className="mx-auto max-w-[1440px] px-4 py-14 sm:px-6 sm:py-16 lg:py-20">
         <div className="grid grid-cols-2 gap-6 rounded-3xl border border-line bg-paper p-6 sm:grid-cols-4 sm:p-10">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
@@ -200,7 +200,7 @@ export default function AboutPage() {
 
       {/* Testimonials */}
       <section className="bg-charcoal">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <p className="eyebrow-dark">Backed by Buyers</p>
           <h2 className="display-lg mt-5 max-w-2xl text-white">
             Trusted by wholesale buyers worldwide.
@@ -252,7 +252,7 @@ export default function AboutPage() {
 
       {/* Certifications strip */}
       <section className="border-t border-line bg-cream">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+        <div className="mx-auto max-w-[1440px] px-4 py-10 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
             {["ISO 9001:2015", "IATF 16949", "OEM Certified", "100% QC Verified"].map((cert) => (
               <div key={cert} className="flex items-center gap-2 text-muted">

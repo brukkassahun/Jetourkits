@@ -40,7 +40,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
   return (
     <div className="min-h-screen bg-cream">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+      <div className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 sm:py-10">
         {/* Breadcrumb */}
         <nav className="mb-6 flex flex-wrap items-center gap-1.5 font-sans text-xs font-bold uppercase tracking-wider text-faint">
           <Link href="/" className="hover:text-accent">Home</Link>

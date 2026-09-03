@@ -151,7 +151,7 @@ export default async function HomePage() {
       <HeroCarousel />
 
       {/* 02 — Model lineup cards */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+      <section className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
         <div className="mb-14 text-center">
           <p className="eyebrow">Pick Your Platform</p>
           <h2 className="display-lg mx-auto mt-5 max-w-3xl">
@@ -206,7 +206,7 @@ export default async function HomePage() {
 
       {/* 03 — Stats strip */}
       <section className="border-y border-line bg-paper">
-        <div className="mx-auto grid max-w-7xl divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-[1440px] divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
           {[
             { value: "50+", label: "Product Lines" },
             { value: "30+", label: "Countries Served" },
@@ -238,7 +238,7 @@ export default async function HomePage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/40" />
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6">
+        <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center px-4 text-center sm:px-6">
           <p className="eyebrow-dark">OEM-Fit Guarantee</p>
           <h2 className="display-lg mx-auto mt-5 max-w-4xl text-white">
             Bolt-on precision. Or your money back.
@@ -260,7 +260,7 @@ export default async function HomePage() {
       </section>
 
       {/* 06 — Our advantage */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+      <section className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Why Buy Wholesale From Us</p>
           <h2 className="display-lg mt-5">
@@ -288,7 +288,7 @@ export default async function HomePage() {
 
       {/* 07 — Explore cards */}
       <section className="bg-charcoal">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
           <div className="mb-14 text-center">
             <p className="eyebrow-dark">More Ways to Work With Us</p>
             <h2 className="display-lg mx-auto mt-5 max-w-3xl text-white">
@@ -318,7 +318,7 @@ export default async function HomePage() {
       </section>
 
       {/* 08 — Featured products */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+      <section className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">Most Popular Kits</p>
@@ -348,7 +348,7 @@ export default async function HomePage() {
 
       {/* 09 — Testimonials */}
       <section className="bg-charcoal">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow-dark">Trusted by Wholesale Buyers Worldwide</p>
             <h2 className="display-lg mt-5 text-white">What Our Partners Say</h2>
@@ -388,7 +388,7 @@ export default async function HomePage() {
 
       {/* 10 — Before / After */}
       <section className="border-y border-line bg-paper">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Transformation</p>
             <h2 className="display-lg mt-5">

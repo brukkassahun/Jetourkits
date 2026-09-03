@@ -39,7 +39,7 @@ export default function TerrainTabs() {
 
   return (
     <section className="bg-charcoal">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
         <div className="mb-10 text-center sm:mb-14">
           <p className="eyebrow-dark">Kits for Every Terrain</p>
           <h2 className="display-lg mx-auto mt-5 max-w-3xl text-white">

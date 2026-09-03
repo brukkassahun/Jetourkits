@@ -68,7 +68,7 @@ export default function HeroCarousel() {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-4rem)] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-4rem)] max-w-[1440px] flex-col justify-center px-4 py-20 sm:px-6">
         <div className="max-w-3xl">
           <p className="eyebrow-dark">{slide.price}</p>
           <AnimatePresence mode="wait">

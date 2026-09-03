@@ -21,7 +21,7 @@ const legalLinks = [
 export default function Footer() {
   return (
     <footer className="bg-charcoal text-cream">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 sm:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand + newsletter */}
           <div className="lg:col-span-1">

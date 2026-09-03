@@ -154,7 +154,7 @@ export default function Hero() {
       </div>
 
       {/* Trust row — hairline separated, editorial */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
