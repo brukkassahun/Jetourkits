@@ -46,6 +46,13 @@ export default function AddToCartPanel({ slug, price, originalPrice }: { slug: s
           Add to Cart
         </button>
       </div>
+
+      <div className="mt-4 flex items-baseline justify-between border-t border-line pt-4">
+        <span className="font-sans text-xs font-bold uppercase tracking-wider text-faint">
+          Total ({qty} {qty === 1 ? "unit" : "units"})
+        </span>
+        <span className="font-display text-2xl font-black text-accent">{format(price * qty)}</span>
+      </div>
     </div>
   );
 }
