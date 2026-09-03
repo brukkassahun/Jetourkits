@@ -35,7 +35,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
   const p = await getProductBySlug(params.slug);
   if (!p) notFound();
 
-  const related = (await queryProducts({ brand: p.brand })).filter((x) => x.slug !== p.slug).slice(0, 3);
+  const related = (await queryProducts({ model: p.model })).filter((x) => x.slug !== p.slug).slice(0, 3);
   const enquiry = `Hello ${site.name}! I'm interested in the ${p.brand} ${p.model} ${p.name} ($${p.price}). My vehicle is a ${p.yearFrom}–${p.yearTo} ${p.brand} ${p.model}. Please confirm fitment and shipping to: `;
 
   return (
@@ -148,7 +148,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
           <section className="mt-14">
             <p className="eyebrow">Complete the Build</p>
             <h2 className="title mt-2">
-              More for your {p.brand}
+              More for your {p.brand} {p.model}
             </h2>
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) => (
