@@ -5,18 +5,17 @@ import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { useCart } from "./CartProvider";
 import { useCurrency } from "./CurrencyProvider";
 
-export default function AddToCartPanel({ slug, price, originalPrice }: { slug: string; price: number; originalPrice?: number }) {
+export default function AddToCartPanel({ slug, price }: { slug: string; price: number; originalPrice?: number }) {
   const { add } = useCart();
   const { format } = useCurrency();
   const [qty, setQtyLocal] = useState(1);
+  const crossedPrice = price * 1.3;
 
   return (
     <div className="rounded-3xl border border-line bg-paper p-6">
       <div className="flex items-end gap-3">
         <p className="font-display text-3xl font-black text-ink">{format(price)}</p>
-        {originalPrice && (
-          <p className="pb-1 text-sm text-faint line-through">{format(originalPrice)}</p>
-        )}
+        <p className="pb-1 text-sm text-faint line-through">{format(crossedPrice)}</p>
       </div>
       <p className="mt-1 text-xs text-faint">EXW China · freight quoted per destination</p>
 

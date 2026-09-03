@@ -11,10 +11,8 @@ export default function ProductCard({ product: p }: { product: Product }) {
   const { add } = useCart();
   const { format } = useCurrency();
 
-  const discount =
-    p.originalPrice && p.originalPrice > p.price
-      ? Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100)
-      : 0;
+  const crossedPrice = p.price * 1.3;
+  const discount = Math.round(((crossedPrice - p.price) / crossedPrice) * 100);
 
   return (
     <Link href={`/products/${p.slug}`} className="group card-coda flex flex-col cursor-pointer">
@@ -59,9 +57,7 @@ export default function ProductCard({ product: p }: { product: Product }) {
         <div className="mt-auto pt-4">
           <div className="flex items-baseline gap-2">
             <p className="font-display text-xl font-black text-ink">{format(p.price)}</p>
-            {p.originalPrice && (
-              <p className="text-xs text-faint line-through">{format(p.originalPrice)}</p>
-            )}
+            <p className="text-xs text-faint line-through">{format(crossedPrice)}</p>
           </div>
           <p className="mt-1 text-[11px] font-medium text-success">
             Discount available for quantity orders
