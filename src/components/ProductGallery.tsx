@@ -35,10 +35,11 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
     setLensPos({ x: Math.max(0, Math.min(100, x)), y: Math.max(0, Math.min(100, y)) });
   }, []);
 
-  const zoomOverlay = (_variant: "desktop" | "mobile") =>
+  const zoomOverlay = (_ariant: "desktop" | "mobile") =>
     zoom && (
       <>
         {/* Zoomed image — background-image positioned by lensPos */}
+        {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
         <div
           className="pointer-events-none absolute inset-0 z-10 bg-paper"
           style={{
