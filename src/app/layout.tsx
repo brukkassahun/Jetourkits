@@ -9,6 +9,7 @@ import FloatingContact from "@/components/FloatingContact";
 import ImageProtection from "@/components/ImageProtection";
 import { CartProvider } from "@/components/CartProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <ImageProtection />
           </CartProvider>
         </CurrencyProvider>
+        <Analytics />
       </body>
     </html>
   );
