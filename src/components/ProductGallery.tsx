@@ -35,11 +35,11 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
     setLensPos({ x: Math.max(0, Math.min(100, x)), y: Math.max(0, Math.min(100, y)) });
   }, []);
 
-  const zoomOverlay = () =>
-    zoom && (
+const zoomOverlay = (variant: "desktop" | "mobile") => {
+    void variant;
+    return zoom && (
       <>
         {/* Zoomed image — background-image positioned by lensPos */}
-        {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
         <div
           className="pointer-events-none absolute inset-0 z-10 bg-paper"
           style={{
@@ -56,6 +56,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
         />
       </>
     );
+  };
 
   const hintBadge = (text: string) => (
     <div className="pointer-events-none absolute right-3 top-3 z-30 flex items-center gap-1 rounded-full bg-ink/70 px-2.5 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-cream backdrop-blur">
