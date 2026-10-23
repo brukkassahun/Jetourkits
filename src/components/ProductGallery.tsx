@@ -35,7 +35,7 @@ export default function ProductGallery({ images, thumbnail, name }: { images: st
     setLensPos({ x: Math.max(0, Math.min(100, x)), y: Math.max(0, Math.min(100, y)) });
   }, []);
 
-  const zoomOverlay = (_ariant: "desktop" | "mobile") =>
+  const zoomOverlay = (variant: "desktop" | "mobile") =>
     zoom && (
       <>
         {/* Zoomed image — background-image positioned by lensPos */}
