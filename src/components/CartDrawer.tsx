@@ -73,7 +73,7 @@ export default function CartDrawer() {
               {items.map(({ product: p, qty }) => (
                 <li key={p.slug} className="card-coda flex gap-3 p-3">
                   <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-2xl bg-paper">
-                    <Image src={p.images[0]} alt={p.name} fill className="object-cover" sizes="96px" />
+                    <Image src={p.thumbnail || p.images[0] || "/images/placeholder-product.webp"} alt={p.name} fill className="object-cover" sizes="96px" />
                   </div>
                   <div className="flex min-w-0 flex-1 flex-col">
                     <Link
