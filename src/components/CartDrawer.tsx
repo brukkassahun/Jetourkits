@@ -61,7 +61,7 @@ export default function CartDrawer() {
               <p className="font-sans text-xs font-black uppercase tracking-[0.18em] text-muted">Cart is empty</p>
               <p className="text-sm text-faint">Add a kit and it shows up here.</p>
               <Link
-                href="/products"
+                href="/products?model=T2"
                 onClick={() => setOpen(false)}
                 className="mt-2 rounded-full bg-ink px-6 py-2.5 font-sans text-xs font-bold uppercase tracking-[0.14em] text-cream"
               >

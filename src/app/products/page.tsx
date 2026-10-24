@@ -134,7 +134,7 @@ export default async function ProductsPage({
               factory network.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/products" className="btn-ghost">
+              <Link href="/products?model=T2" className="btn-ghost">
                 Clear filters
               </Link>
               <a

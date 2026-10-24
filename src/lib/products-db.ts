@@ -35,12 +35,12 @@ function rowToProduct(r: any): Product {
   };
 }
 
-/** Fetch all rows from Supabase, or null when unavailable. */
+/** Fetch T2 rows from Supabase, or null when unavailable. */
 async function fetchRows(): Promise<Product[] | null> {
   const sb = getSupabase();
   if (!sb) return null;
   try {
-    const { data, error } = await sb.from("products").select("*");
+    const { data, error } = await sb.from("products").select("*").eq("model", "T2");
     if (error || !data || data.length === 0) return null;
     return data.map(rowToProduct);
   } catch {
@@ -56,7 +56,7 @@ export async function listProducts(): Promise<Product[]> {
   return (await fetchRows()) ?? localProducts;
 }
 
-/** Single product by slug. */
+/** Single T2 product by slug. */
 export async function getProductBySlug(slug: string): Promise<Product | undefined> {
   const sb = getSupabase();
   if (!sb) return localGet(slug);
@@ -65,6 +65,7 @@ export async function getProductBySlug(slug: string): Promise<Product | undefine
       .from("products")
       .select("*")
       .eq("slug", slug)
+      .eq("model", "T2")
       .maybeSingle();
     if (error) return localGet(slug); // DB unreachable → local rescue
     return data ? rowToProduct(data) : undefined; // DB is source of truth

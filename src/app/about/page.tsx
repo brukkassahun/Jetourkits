@@ -94,7 +94,7 @@ export default function AboutPage() {
                 in China — engineered for the T2, and shipped to wholesale buyers worldwide.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link href="/products" className="btn-primary group">
+                <Link href="/products?model=T2" className="btn-primary group">
                   Shop Kits
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -239,7 +239,7 @@ export default function AboutPage() {
             Browse the catalog, request a quote, or talk to sales about wholesale pricing and container orders.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/products" className="btn-on-accent group">
+            <Link href="/products?model=T2" className="btn-on-accent group">
               Browse Catalog
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>

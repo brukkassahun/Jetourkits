@@ -45,7 +45,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
         <nav className="mb-6 flex flex-wrap items-center gap-1.5 font-sans text-xs font-bold uppercase tracking-wider text-faint">
           <Link href="/" className="hover:text-accent">Home</Link>
           <span>/</span>
-          <Link href="/products" className="hover:text-accent">Kits</Link>
+          <Link href="/products?model=T2" className="hover:text-accent">Kits</Link>
           <span>/</span>
           <Link href={`/products?brand=${encodeURIComponent(p.brand)}`} className="hover:text-accent">{p.brand}</Link>
           <span>/</span>

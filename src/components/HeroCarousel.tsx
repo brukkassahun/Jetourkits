@@ -64,7 +64,7 @@ export default function HeroCarousel() {
               Shop {slide.id} Kits
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
             </Link>
-            <Link href="/products" className="btn-ghost-light">
+            <Link href="/products?model=T2" className="btn-ghost-light">
               View All Kits
             </Link>
           </div>

@@ -124,7 +124,7 @@ export default function Hero() {
           </p>
 
           <div className="hero-fade mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/products" className="btn-primary shine animate-glow">
+            <Link href="/products?model=T2" className="btn-primary shine animate-glow">
               Explore Styling Kits
               <ArrowRight className="h-4 w-4" strokeWidth={2} />
             </Link>

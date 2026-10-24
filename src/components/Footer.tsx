@@ -82,7 +82,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/products" className="text-sm font-medium text-cream hover:text-white">
+                <Link href="/products?model=T2" className="text-sm font-medium text-cream hover:text-white">
                   All kits →
                 </Link>
               </li>

@@ -62,7 +62,7 @@ export default function Header() {
             <div className="hidden sm:block">
               <CurrencySelector />
             </div>
-            <Link href="/products" className="btn-primary hidden sm:flex">
+            <Link href="/products?model=T2" className="btn-primary hidden sm:flex">
               Shop Kits
             </Link>
             <button
@@ -96,7 +96,7 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Link href="/products" className="btn-primary mt-6 justify-center">
+          <Link href="/products?model=T2" className="btn-primary mt-6 justify-center">
             Shop All Kits
           </Link>
           <div className="mt-4 flex items-center justify-between rounded-full border border-line px-4 py-3">

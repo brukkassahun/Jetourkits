@@ -215,7 +215,7 @@ export default async function HomePage() {
             the Gulf and Southeast Asia can handle fitment end-to-end.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/products" className="btn-accent">
+            <Link href="/products?model=T2" className="btn-accent">
               Browse Kits
               <ArrowRight className="h-4 w-4" strokeWidth={2} />
             </Link>
@@ -295,7 +295,7 @@ export default async function HomePage() {
             </p>
           </div>
           <Link
-            href="/products"
+            href="/products?model=T2"
             className="hidden shrink-0 items-center gap-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition-colors hover:text-accent sm:flex"
           >
             View all <MoveRight className="h-4 w-4" strokeWidth={2} />
@@ -307,7 +307,7 @@ export default async function HomePage() {
           ))}
         </div>
         <div className="mt-10 text-center sm:hidden">
-          <Link href="/products" className="btn-ghost">
+          <Link href="/products?model=T2" className="btn-ghost">
             View all kits
           </Link>
         </div>
