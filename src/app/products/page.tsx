@@ -16,20 +16,6 @@ export const metadata: Metadata = {
 
 export const revalidate = 60;
 
-const categoryPills = [
-  { label: "T2", href: "/products?model=T2" },
-  { label: "T1 / Traveller", href: "/products?model=T1%20%2F%20Traveller" },
-  { label: "G700", href: "/products?model=G700" },
-  { label: "Full Armor", href: "/products?kitType=Full%20Armor%20Kit" },
-  { label: "Full Body", href: "/products?kitType=Full%20Body%20Kit" },
-  { label: "Bumpers", href: "/products?kitType=Front%20Bumper" },
-  { label: "Roof Racks", href: "/products?kitType=Roof%20Rack" },
-  { label: "Lighting", href: "/products?kitType=Light%20Bar" },
-  { label: "Off-Road", href: "/products?style=Off-Road" },
-  { label: "Mecha", href: "/products?style=Mecha" },
-  { label: "Urban Aero", href: "/products?style=Urban%20Aero" },
-];
-
 export default async function ProductsPage({
   searchParams,
 }: {
@@ -86,18 +72,7 @@ export default async function ProductsPage({
             </Suspense>
           </div>
 
-          {/* Category pills */}
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            {categoryPills.map((pill) => (
-              <Link
-                key={pill.label}
-                href={pill.href}
-                className="rounded-full border border-line bg-paper px-4 py-2 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:border-ink hover:text-accent"
-              >
-                {pill.label}
-              </Link>
-            ))}
-          </div>
+
         </div>
       </section>
 
