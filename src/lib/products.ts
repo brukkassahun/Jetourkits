@@ -23,7 +23,7 @@ export interface Product {
   slug: string;
   name: string;
   brand: string; // Jetour
-  model: string; // T1 / T2 / G700
+  model: string; // T2
   yearFrom: number;
   yearTo: number;
   style: KitStyle;
@@ -42,7 +42,7 @@ export interface Product {
 }
 
 // Local fallback catalog is intentionally empty — live data is loaded from Supabase.
-// The seeded Excel catalogs (T1, T2, G700) are the source of truth.
+// The seeded T2 catalog is the source of truth.
 export const products: Product[] = [];
 
 export function getProduct(slug: string) {

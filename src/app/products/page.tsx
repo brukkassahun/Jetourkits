@@ -11,7 +11,7 @@ import Pagination from "@/components/Pagination";
 export const metadata: Metadata = {
   title: "All Body Kits",
   description:
-    "Browse every body kit, bumper, rack and aero upgrade for Jetour T1, T2 and G700 — OEM-fit guaranteed, shipped worldwide.",
+    "Browse every body kit, bumper, rack and aero upgrade for the Jetour T2 — OEM-fit guaranteed, shipped worldwide.",
 };
 
 export const revalidate = 60;

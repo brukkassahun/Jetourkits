@@ -13,8 +13,6 @@ export const site = {
 
 export const navLinks = [
   { href: "/products?model=T2", label: "T2" },
-  { href: "/products?model=T1%20%2F%20Traveller", label: "T1" },
-  { href: "/products?model=G700", label: "G700" },
   { href: "/wholesale", label: "Wholesale" },
   { href: "/contact", label: "Contact Us" },
   { href: "/about", label: "About Us" },
@@ -32,8 +30,6 @@ export const trustBadges = [
 
 export const brandLines = [
   { id: "Jetour T2", label: "Jetour T2", models: ["T2"] },
-  { id: "Jetour T1", label: "Jetour T1", models: ["T1 / Traveller"] },
-  { id: "Jetour G700", label: "Jetour G700", models: ["G700"] },
 ] as const;
 
 export const kitStyles = ["Off-Road", "Mecha", "Urban Aero"] as const;

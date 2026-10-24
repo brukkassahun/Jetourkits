@@ -19,10 +19,7 @@ const TICKER = [
   "OEM-Fit Guaranteed",
   "Ships Worldwide",
   "Jetour T2",
-  "Jetour G700",
-  "Jetour T1",
   "T2 Body Kits",
-  "G700 Armor",
 ];
 
 export default function Hero() {
@@ -106,7 +103,7 @@ export default function Hero() {
           className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-4 pb-16 pt-32 text-center sm:px-6 sm:pt-36"
         >
           <p className="eyebrow hero-fade">
-            Jetour T1 · Jetour T2 · Jetour G700
+            Jetour T2
           </p>
           <h1 className="display-xl mt-8 text-[13vw] text-ink sm:text-8xl lg:text-[7.5rem]">
             <span className="block">
@@ -122,7 +119,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="hero-fade mx-auto mt-8 max-w-xl text-base leading-[1.8] text-ink/70 sm:text-lg">
-            Factory-direct armor, mecha and aero kits for Jetour T1, T2 and G700. Engineered to OEM fit.
+            Factory-direct armor, mecha and aero kits for the Jetour T2. Engineered to OEM fit.
             From full expedition builds to plug-and-play aero — shipped worldwide from China.
           </p>
 

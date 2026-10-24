@@ -5,7 +5,7 @@ import { site, whatsappLink } from "@/lib/site";
 
 export const metadata = {
   title: "About Us",
-  description: `About ${site.name} — Premium wholesale aftermarket parts for the Jetour T2, T1 and G700`,
+  description: `About ${site.name} — Premium wholesale aftermarket parts for the Jetour T2`,
 };
 
 const stats = [
@@ -64,7 +64,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Finally a supplier that understands the Traveller platform. CAD-matched brackets saved us weeks of rework.",
+    quote: "Finally a supplier that understands the T2 platform. CAD-matched brackets saved us weeks of rework.",
     name: "Wholesale Buyer",
     role: "Nigeria",
     rating: 5,
@@ -91,7 +91,7 @@ export default function AboutPage() {
               </h1>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
                 We source OEM-fit aftermarket parts directly from certified manufacturing partners
-                in China — engineered for the T2, T1 and G700, and shipped to wholesale buyers worldwide.
+                in China — engineered for the T2, and shipped to wholesale buyers worldwide.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link href="/products" className="btn-primary group">

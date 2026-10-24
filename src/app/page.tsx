@@ -27,38 +27,8 @@ export default async function HomePage() {
   const products = await listProducts();
   const featured = products.filter((p) => p.featured).slice(0, 4);
 
-  const models = [
-    {
-      id: "T2",
-      name: "Jetour T2",
-      tagline: "The off-road flagship.",
-      desc: "Mars Explorer full armor, Stargazer aero, LED wings and Ironclad bumpers — our widest platform.",
-      from: "$420",
-      image: "/images/model-t2.webp",
-      href: "/products?model=T2",
-      count: products.filter((p) => p.model === "T2").length,
-    },
-    {
-      id: "T1",
-      name: "Jetour T1",
-      tagline: "The original Traveller.",
-      desc: "Trail fender flares, roof racks, snorkels and front bumpers for the model that started the adventure line.",
-      from: "$380",
-      image: "/images/model-t1.webp",
-      href: "/products?model=T1%20%2F%20Traveller",
-      count: products.filter((p) => p.model === "T1 / Traveller").length,
-    },
-    {
-      id: "G700",
-      name: "Jetour G700",
-      tagline: "Heavy-duty expedition.",
-      desc: "Military-grade chassis armor, larger bull bars and reinforced side steps built for the G700's scale.",
-      from: "$560",
-      image: "/images/model-g700.webp",
-      href: "/products?model=G700",
-      count: products.filter((p) => p.model === "G700").length,
-    },
-  ];
+  const t2Count = products.filter((p) => p.model === "T2").length;
+  const t2From = "$420";
 
   const advantages = [
     {
@@ -150,58 +120,55 @@ export default async function HomePage() {
       {/* 01 — Hero */}
       <HeroCarousel />
 
-      {/* 02 — Model lineup cards */}
+      {/* 02 — T2 showcase */}
       <section className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 sm:py-28">
         <div className="mb-14 text-center">
-          <p className="eyebrow">Pick Your Platform</p>
+          <p className="eyebrow">The Platform</p>
           <h2 className="display-lg mx-auto mt-5 max-w-3xl">
-            Three JETOUR platforms. One upgrade standard.
+            Built for the Jetour T2.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted">
-            Every kit is CAD-matched to factory mounting points — no cutting, no welding, no guesswork.
+            Mars Explorer full armor, Stargazer aero, LED wings and Ironclad bumpers — every kit is CAD-matched to factory mounting points. No cutting, no welding, no guesswork.
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {models.map((m) => (
-            <Link
-              key={m.id}
-              href={m.href}
-              className="group card-coda flex h-full flex-col"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={m.image}
-                  alt={m.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+        <Link
+          href="/products?model=T2"
+          className="group card-coda flex flex-col overflow-hidden sm:flex-row"
+        >
+          <div className="relative aspect-[16/10] sm:aspect-auto sm:h-full sm:w-1/2">
+            <Image
+              src="/images/model-t2.webp"
+              alt="Jetour T2"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, 50vw"
+            />
+          </div>
+          <div className="flex flex-1 flex-col justify-center p-6 sm:p-12">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="title">Jetour T2</p>
+                <p className="mt-1 text-xs text-faint">The off-road flagship.</p>
               </div>
-              <div className="flex flex-1 flex-col p-6 sm:p-8">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="title">{m.name}</p>
-                    <p className="mt-1 text-xs text-faint">{m.tagline}</p>
-                  </div>
-                  <span className="rounded-full bg-accent/10 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-accent">
-                    {m.count} kits
-                  </span>
-                </div>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">{m.desc}</p>
-                <div className="mt-6 flex items-center justify-between border-t border-line pt-5">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-muted">
-                    From {m.from}
-                  </span>
-                  <span className="flex items-center gap-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition-colors group-hover:text-accent">
-                    Explore
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              <span className="rounded-full bg-accent/10 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-accent">
+                {t2Count} kits
+              </span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-muted">
+              The widest platform in our catalog. Off-road armor, mecha wide bodies, urban aero — three ways to transform one vehicle.
+            </p>
+            <div className="mt-6 flex items-center justify-between border-t border-line pt-5">
+              <span className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-muted">
+                From {t2From}
+              </span>
+              <span className="flex items-center gap-2 font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition-colors group-hover:text-accent">
+                Explore
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
+              </span>
+            </div>
+          </div>
+        </Link>
       </section>
 
       {/* 03 — Stats strip */}
