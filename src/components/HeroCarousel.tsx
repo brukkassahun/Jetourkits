@@ -33,10 +33,10 @@ export default function HeroCarousel() {
           alt={slide.name}
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center brightness-150 contrast-110"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/50 to-charcoal/10" />
       </motion.div>
 
       {/* Content */}
