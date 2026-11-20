@@ -10,6 +10,7 @@ import ImageProtection from "@/components/ImageProtection";
 import { CartProvider } from "@/components/CartProvider";
 import { CurrencyProvider } from "@/components/CurrencyProvider";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </CartProvider>
         </CurrencyProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
